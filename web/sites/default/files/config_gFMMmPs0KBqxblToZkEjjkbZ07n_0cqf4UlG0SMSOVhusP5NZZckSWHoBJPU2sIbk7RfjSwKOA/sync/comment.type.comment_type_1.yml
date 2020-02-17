@@ -1,0 +1,8 @@
+uuid: 3dd647d6-32b4-4f2f-be80-8e283a54bad7
+langcode: en
+status: true
+dependencies: {  }
+id: comment_type_1
+label: 'comment type 1'
+target_entity_type_id: user
+description: 'This is the comment type only for content types. ( node ).'

@@ -1,0 +1,22 @@
+uuid: 2d9d7603-a60e-42f1-a5fb-eb0bf16e8e57
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bbq_nation
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: bbq_nation_content
+theme: bbq_nation
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

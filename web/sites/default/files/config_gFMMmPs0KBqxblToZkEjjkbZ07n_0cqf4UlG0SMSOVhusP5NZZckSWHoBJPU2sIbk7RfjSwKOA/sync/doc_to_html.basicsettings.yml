@@ -1,0 +1,8 @@
+doc_to_html_folder: doc_to_html
+utf_8_encode: 1
+doc: 1
+docx: 1
+extract_content_of_html_body: 1
+regex_to_parse_body: '/<body.*\/body>/s'
+_core:
+  default_config_hash: RsuD9Ya2cTKc4eU8okdsgJQCMk8V3VvwoNNm3u3IaeA

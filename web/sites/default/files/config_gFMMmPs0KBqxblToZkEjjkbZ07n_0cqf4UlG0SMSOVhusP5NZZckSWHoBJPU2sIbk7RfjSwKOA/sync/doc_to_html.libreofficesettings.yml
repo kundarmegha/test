@@ -1,0 +1,5 @@
+doc_to_html: null
+_core:
+  default_config_hash: Gq4ikun4Gau5xOvzNot1FyukDkbjy5zS9sUdj6AE3CA
+base_path_application: /Applications/LibreOffice.app/Contents/MacOS/
+command: ./soffice

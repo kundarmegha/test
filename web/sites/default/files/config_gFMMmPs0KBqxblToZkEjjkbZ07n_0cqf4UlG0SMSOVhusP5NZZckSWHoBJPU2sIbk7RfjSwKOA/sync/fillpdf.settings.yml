@@ -1,0 +1,8 @@
+allowed_schemes:
+  - private
+template_scheme: ''
+shell_locale: en_US.utf8
+remote_protocol: https
+remote_endpoint: fillpdf.io/xmlrpc.php
+_core:
+  default_config_hash: N3q1xfln78CdgGgh9If0HFTbhSawQTw0UUcp8n6iN0A
