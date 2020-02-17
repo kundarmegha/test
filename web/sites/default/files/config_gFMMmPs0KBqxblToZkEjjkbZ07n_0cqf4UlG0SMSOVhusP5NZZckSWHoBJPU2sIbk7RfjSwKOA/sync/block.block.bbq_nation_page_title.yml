@@ -1,0 +1,20 @@
+uuid: cf0ae464-5e06-4c30-92ed-e9c8b3651b09
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bbq_nation
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: bbq_nation_page_title
+theme: bbq_nation
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

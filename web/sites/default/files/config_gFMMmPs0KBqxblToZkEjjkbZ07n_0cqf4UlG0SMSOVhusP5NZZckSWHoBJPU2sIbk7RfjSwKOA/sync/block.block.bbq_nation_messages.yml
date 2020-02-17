@@ -1,0 +1,22 @@
+uuid: 858d7fab-62d2-4503-8a9f-a27b47b88990
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bbq_nation
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: bbq_nation_messages
+theme: bbq_nation
+region: header_left
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

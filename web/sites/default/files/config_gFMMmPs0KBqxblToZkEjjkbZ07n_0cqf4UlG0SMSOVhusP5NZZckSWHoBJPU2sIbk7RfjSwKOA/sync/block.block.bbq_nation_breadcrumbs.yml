@@ -1,0 +1,22 @@
+uuid: 5a83cfa7-1ca6-48ff-8330-a2fc9feee4e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bbq_nation
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: bbq_nation_breadcrumbs
+theme: bbq_nation
+region: header_left
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

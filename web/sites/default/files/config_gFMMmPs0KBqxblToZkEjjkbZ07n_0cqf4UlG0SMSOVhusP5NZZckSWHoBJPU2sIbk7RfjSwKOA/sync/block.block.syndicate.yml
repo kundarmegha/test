@@ -1,0 +1,28 @@
+uuid: 1a7729e6-4ca5-489f-830f-2096f580aa2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - bartik
+id: syndicate
+theme: bartik
+region: highlighted
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'Syndicate [current-date:long]'
+  provider: node
+  label_display: visible
+  block_count: 10
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
