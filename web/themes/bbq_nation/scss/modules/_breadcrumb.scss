@@ -1,0 +1,30 @@
+// Breadcrumb styling.
+.breadcrumb {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+.breadcrumb__item {
+  padding: 5px 5px 5px 0;
+  font-size: $font-size--s;
+  font-weight: $font-weight--medium;
+  &:after {
+    content: "/";
+    opacity: 0.5;
+  }
+  &:last-child {
+    &:after {
+      content: "";
+    }
+  }
+}
+.breadcrumb__link {
+  opacity: 0.5;
+}
+
+.breadcrumb li:before {
+  content: '\00a0 ';
+}

@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the card components paragraph.
+ */
+#}
+
+{% extends "paragraph.html.twig" %}
+{% block content %}
+<div class="layout-container">
+    {% if content.field_title|render|trim is not empty %}
+      <h3 class="card-components--title">
+        {{ content.field_title }}
+      </h3>
+    {% endif %}
+    <div class="card-components--content row space-between">
+        {{ content.field_card }}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+.redeem {
+  text-align: center;
+  h2 {
+    margin-bottom: 35px;
+    font-size: $font-size--xxxl;
+    font-weight: $font-weight--semibold;
+  }
+  .row {
+    @include bp-large() {
+      justify-content: space-between;
+    }
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+.redeem-card {
+  max-width: 235px;
+  margin-bottom: 45px;
+  .icon {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 24px auto;
+    border-radius: 50%;
+    background: $color--seashell;
+    line-height: 110px;
+    > img {
+      width: 55px;
+    }
+  }
+  h3 {
+    margin-bottom: 8px;
+    color: $color--chico;
+    font-size: $font-size--xl;
+    font-weight: $font-weight--semibold;
+  }
+  .description {
+    @include bp-small(){
+      min-height: 120px;
+    }
+    @include bp-large() {
+      min-height: 150px;
+    }
+  }
+  @include bp-small(){
+    max-width: 100%;
+    flex: 0 0 50%;
+    padding: 10px;
+  }
+  @include bp-medium() {
+    max-width: 100%;
+    flex: 0 0 33.3%;
+    padding: 10px;
+  }
+  @include bp-large(){
+    padding: 0;
+    flex: unset;
+    max-width: 235px;
+    margin-bottom: 45px;
+  }
+}
+.redeem__breaker {
+  position: relative;
+  > span {
+    display: block;
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    border: 1px solid $color--whisper;
+    border-radius: 50%;
+    background: $color--white;
+    font-size: $font-size--l;
+    font-weight: $font-weight--semibold;
+    line-height: 65px;
+  }
+  &:before {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    transform: translateY(-50%);
+    background: $color--whisper;
+  }
+}
+.redeem__link {
+  display: block;
+  margin: 35px 0 100px;
+  color: $color--chico;
+  font-size: $font-size--xxl;
+  font-weight: $font-weight--semibold;
+}

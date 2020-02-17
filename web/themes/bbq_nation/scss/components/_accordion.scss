@@ -1,0 +1,123 @@
+.accordion-panel {
+  margin-bottom: 20px;
+  background: $color--white;
+  border-radius: 10px;
+  font-size: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .accordion-header {
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+
+    &::after {
+      content: "\e92c";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      font-weight: 300;
+      font-family: 'icomoon';
+      color: $color--primary;
+      @include bp-xs-small(){
+        font-size: 16px;
+        right: 15px;
+      }
+    }
+  }
+
+  &.active {
+    > .accordion-header {
+      &::after {
+        content: "\e92b";
+        font-size: 20px;
+        font-family: 'icomoon';
+        color: $color--primary;
+        @include bp-xs-small(){
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .accordion-body {
+    display: none;
+    margin-top: 10px;
+    padding: 0 20px 20px;
+
+    &.show {
+      .accordion-panel {
+        margin-bottom: 0;
+
+        .accordion-header {
+          //padding: 10px 15px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+.accordion {
+  margin-bottom: 20px;
+  font-family: "Nunito Sans",sans-serif;
+  .accordion-panel {
+    @include bp-xs-small {
+      padding: 10px 0;
+    }
+
+    // border-bottom: 1px solid $color--white-smoke;
+    // margin-bottom: 0;
+    // padding: 35px 0;
+    // border-radius: 0;
+
+    // &:first-child {
+    //   padding-top: 0;
+    // }
+
+    .accordion-header {
+      @include bp-xs-small {
+        font-size: 14px;
+      }
+
+      // font-weight: 500;
+      // font-size: 18px;
+      // padding: 0;
+      text-transform: inherit;
+      letter-spacing: 0.2px;
+
+      &::after {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .accordion-body {
+      @include bp-xs-small {
+        font-size: 12px;
+        line-height: 1.8;
+      }
+
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 300;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  .js-pager__items {
+    margin: 35px 0;
+  }
+}
+

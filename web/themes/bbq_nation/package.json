@@ -1,0 +1,32 @@
+{
+  "name": "bbq",
+  "version": "1.0.0",
+  "description": "Barbeque Nation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gsh"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-star-rating": "^4.0.6",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2",
+    "jq-fakeloader": "^2.0.1",
+    "jquery-confirm": "^3.3.4",
+    "jquery-ui": "^1.12.1",
+    "moment": "^2.24.0",
+    "owl.carousel2": "^2.2.1",
+    "toastr": "^2.1.4"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "sass-lint": "^1.12.1",
+    "gulp-sass-lint": "^1.4.0"
+  }
+}

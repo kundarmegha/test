@@ -1,0 +1,29 @@
+.vouchers {
+  &--block {
+    padding-top: 35px;
+  }
+
+  &-carousel {
+    border-bottom: 1px solid #ECE6E3;
+    padding-bottom: 70px;
+
+    @include bp-xs-small() {
+      margin-top: 10px;
+      border: none;
+      padding-bottom: 32px;
+    }
+
+    @include bp-small() {
+      padding-bottom: 60px;
+    }
+
+    @include bp-medium() {
+      margin-top: 0;
+      border-bottom: 1px solid #ECE6E3;
+      padding-bottom: 70px;
+    }
+    .slick-track {
+      margin: 0;
+    }
+  }
+}

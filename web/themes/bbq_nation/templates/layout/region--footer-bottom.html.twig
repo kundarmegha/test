@@ -1,0 +1,8 @@
+{% set classes = [
+  'footer--bottom row space-between align-center'
+] %}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ content }}
+  </div>
+{% endif %}

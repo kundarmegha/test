@@ -1,0 +1,18 @@
+name: My theme
+core: 8.x
+type: theme
+description: 'My theme is a user friendly theme'
+package: custom
+php: 7.3
+version: 8.8.0
+libraries:
+  - my_theme/global-css
+  - my_theme/global-js
+
+
+libraries-override:
+  core/jquery_ui:
+    css:
+      theme:
+        /core/assets/vendor/jquery.ui/themes/base/theme.css: false
+

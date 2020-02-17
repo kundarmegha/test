@@ -1,0 +1,11 @@
+.menuToggle {
+    cursor: pointer;
+
+  &::before {
+    content: "\e919";
+    font-family: icomoon;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}

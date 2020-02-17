@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the card object paragraph.
+#}
+
+{% extends "paragraph.html.twig" %}
+{% block content %}
+<div class="layout-container">
+    {% if content.field_title|render|striptags %}
+      <div class="paragraph__title">
+        {{ content.field_title }}
+      </div>
+    {% endif %}
+    {% if content.field_card_object|render|striptags %}
+    <div class="card__object">
+      {{ content.field_card_object }}
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+<article id="{{ product_id }}" class="card card--voucher">
+  <div class="card__media">
+    <img src="{{ card_image }}" alt="Voucher">
+  </div>
+  <div class="card__header">
+    <div class="unit">{{ card_header }}</div>
+    <div class="price">&#8377;{{ price }}</div>
+  </div>
+  <div class="card__footer">
+    <div class="atc">
+      <a id="add-to-cart-{{ product_id }}" class="button button--atc">Add to Cart</a>
+      <div class="card__footer__form-wrap">
+        <div class="form form--atc">
+          <div class="value-button decrease-item">-</div>
+          <input type="text" class="voucher-quantity-{{ product_id }} number" value="0" readonly/>
+          <div class="value-button increase-item">+</div>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      <a href="#" class="open-dialog">More info</a>
+    </div>
+  </div>
+</article>

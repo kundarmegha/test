@@ -1,0 +1,156 @@
+.voucher {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 15px 18px;
+  height: 205px;
+
+  @include bp-xs-small() {
+    width: 300px;
+    padding: 20px;
+    margin: 0 5px;
+  }
+
+  @include bp-small() {
+    margin: 15px 10px;
+  }
+
+  @include bp-medium() {
+    width: auto;
+    padding: 30px;
+    margin: 15px 18px;
+  }
+
+  &::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.8);
+    background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &--details {
+    position: relative;
+    z-index: 1;
+    color: $color--white;
+    font-size: 20px;
+    font-weight: 700;
+    height: 100%;
+
+    @include bp-xs-small() {
+      font-size: 12px;
+    }
+
+    @include bp-large() {
+      font-size: 20px;
+    }
+
+    &-title {
+      font-weight: 500;
+    }
+
+    &-price {
+      font-size: 26px;
+      //margin-bottom: 55px;
+
+      @include bp-xs-small() {
+        //margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      @include bp-medium() {
+        //margin-bottom: 55px;
+        font-size: 26px;
+      }
+    }
+
+    &-cta {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 14px;
+
+      @include bp-xs-small() {
+        font-size: 10px;
+      }
+
+      @include bp-medium() {
+        font-size: 14px;
+      }
+
+      a {
+        padding: 5px 12px;
+      }
+
+      .card__footer__form-wrap {
+        display: none;
+      }
+
+      .form--atc {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        .value-button,
+        input {
+          flex: 0 0 20px;
+        }
+        .value-button {
+          height: 20px;
+          text-align: center;
+          border: 1px solid $color--primary;
+          border-radius: 50%;
+          font-size: $font-size--xxs;
+          font-weight: $font-weight--bold;
+          line-height: 17px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        input {
+          text-align: center;
+          color: $color--white !important;
+          border: none !important;
+          background: none !important;
+          font-size: $font-size--xs;
+          font-weight: $font-weight--bold;
+        }
+      }
+    }
+  }
+
+  &--image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      @include bp-xs-small() {
+        object-fit: unset;
+      }
+      @include bp-small() {
+        object-fit: unset;
+      }
+      @include bp-medium() {
+        object-fit: cover;
+      }
+      @include bp-large() {
+        object-fit: cover;
+      }
+    }
+  }
+}

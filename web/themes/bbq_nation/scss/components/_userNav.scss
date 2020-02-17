@@ -1,0 +1,117 @@
+.user {
+  position: relative;
+  cursor: pointer;
+  &-nav {
+    @include bp-xs-small() {
+      display: none;
+    }
+    @include bp-small() {
+      display: none;
+    }
+    @include bp-medium() {
+      display: flex;
+    }
+    margin-right: 60px;
+    img {
+      margin: 0 3px;
+    }
+  }
+  &--dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    display: none;
+  }
+  &-image {
+    width: 32px;
+    height: 32px;
+    &.default {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &.show {
+    .user--dropdown {
+      display: block;
+    }
+    .user-name-dropdown {
+      &::after {
+        content: "\e91f";
+        font-family: icomoon;
+        font-size: 12px;
+        color: #fc4412;
+        margin-right: 5px;
+        opacity: .7;
+        font-weight: 800;
+        cursor: pointer;
+      }
+    }
+    .arrow-down {
+      transform: rotate(180deg);
+    }
+  }
+  &-name {
+    margin-right: 3px;
+    font-size: $font-size--xs;
+  }
+  &-name-dropdown {
+    &::after {
+      content: "\e91c";
+      font-family: icomoon;
+      font-size: 12px;
+      color: #fc4412;
+      margin-right: 5px;
+      opacity: .7;
+      font-weight: 800;
+      cursor: pointer;
+    }
+  }
+  &-rewards {
+
+    &::before {
+      content: "\e901";
+      font-family: icomoon;
+      font-size: 12px;
+      margin-right: 5px;
+      font-weight: 800;
+      color: white;
+    }
+    height: 20px;
+    margin-left: 3px;
+    padding: 0 7px;
+    color: #fff;
+    border-radius: 20px;
+    background: #fc4412;
+    font-size: 10px;
+    img {
+      margin: 0 4px 0 0;
+    }
+    &--points {
+      line-height: normal;
+    }
+  }
+}
+.login {
+  &--modal {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out 0s;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    &.show {
+      display: flex;
+    }
+    &-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+  }
+}

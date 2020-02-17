@@ -1,0 +1,146 @@
+.nearbyOutlets {
+  padding: 85px 0 60px;
+
+  @include bp-xs-small() {
+    padding: 35px 0;
+  }
+
+  @include bp-small() {
+    padding: 35px 0 0;
+  }
+
+  @include bp-medium() {
+    padding: 85px 0 60px;
+  }
+
+  .layout {
+    &-container {
+      margin: auto;
+      @include bp-xs-small() {
+        flex-direction: column;
+      }
+
+      @include bp-small() {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      @include bp-medium() {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      @include bp-large() {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &--content {
+    width: calc(34% - 85px);
+    margin-right: 85px;
+
+    @include bp-xs-small() {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+
+    @include bp-small() {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+
+    @include bp-medium() {
+      width: calc(34% - 85px);
+      margin-right: 85px;
+      margin-bottom: 0;
+    }
+
+    &-title {
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 20px;
+
+      @include bp-xs-small() {
+        font-size: 22px;
+      }
+
+      @include bp-small() {
+        font-size: 22px;
+      }
+
+      @include bp-medium() {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+      @include bp-large() {
+        font-size: 36px;
+        font-weight: 600;
+      }
+    }
+
+    &-description {
+      font-size: 18px;
+      opacity: 0.8;
+      margin-bottom: 35px;
+
+      @include bp-xs-small() {
+        font-size: 14px;
+      }
+
+      @include bp-small() {
+        font-size: 14px;
+      }
+
+      @include bp-medium() {
+        font-size: 16px;
+      }
+
+      @include bp-large() {
+        font-size: 18px;
+      }
+    }
+
+    &-link {
+      font-size: 12px;
+      text-transform: uppercase;
+      a {
+        transition: color 0.2s ease-in-out 0s;
+        outline: none;
+
+        &:hover {
+          color: $color--link;
+        }
+      }
+    }
+  }
+
+  &--block {
+    width: 66%;
+
+    @include bp-xs-small() {
+      width: 100%;
+    }
+
+    @include bp-small() {
+      width: 100%;
+    }
+
+    @include bp-medium() {
+      width: 66%;
+    }
+  }
+
+  &-carousel {
+    width: 100%;
+    margin-bottom: 0 !important;
+
+    @include bp-large() {
+      .slick-track {
+        width: 100% !important;
+      }
+    }
+  }
+}

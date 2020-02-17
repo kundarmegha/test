@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Main page layout for BBQ.
+ */
+#}
+
+<header aria-label="Site header" class="header" id="header" role="banner">
+  <div class="layout-container">
+    <div class="row align-center space-between">
+      {{ page.header_left }}
+      {{ page.header_center }}
+      {{ page.header_right }}
+    </div>
+  </div>
+</header>
+{% block content %}
+<main aria-label="Site main content" class="main" id="main" role="main">
+  {{ page.content }}
+</main>
+{% endblock %}
+
+{% if is_front %}
+<section class="reservation reservation--curtain">
+    {% include "@bbq_nation/partials/components/includes/reservation_info.twig" %}
+</section>
+{% endif %}
+
+
+<footer aria-label="Site footer" class="footer" id="footer" role="contentinfo">
+  <div class="layout-container">
+    <div class="footer--top row space-between">
+      {{ page.footer_first }}
+      {{ page.footer_second }}
+      {{ page.footer_third }}
+    </div>
+    {{ page.footer_bottom }}
+  </div>
+</footer>

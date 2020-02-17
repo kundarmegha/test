@@ -1,0 +1,8 @@
+{% set classes = [
+  'header-right row align-center'
+] %}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ content }}
+  </div>
+{% endif %}

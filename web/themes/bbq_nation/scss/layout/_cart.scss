@@ -1,0 +1,423 @@
+.show-cart {
+  @include bp-xs-small() {
+    margin-right: 15px;
+  }
+
+  @include bp-small() {
+    margin-right: 15px;
+  }
+
+  @include bp-medium() {
+    margin-right: 35px;
+  }
+
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 35px;
+  cursor: pointer;
+  background: url("../assets/images/shopping-cart.svg") no-repeat center center;
+  background-size: 20px;
+
+  .count {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background: #fc4412;
+    font-size: 10px;
+  }
+}
+
+.voucher__apply-vouchers {
+  margin-top: 20px;
+
+  a {
+    padding: 10px 17px 10px 45px;
+    background: $color--white url("../assets/images/discount-theme.svg") no-repeat 17px center;
+    background-size: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    display: inline-flex;
+    border-radius: 10px;
+    color: $color--submit-button;
+    font-weight: 500;
+    outline: none;
+  }
+}
+
+.cart--curtain {
+  @include transition($transition-time--base all ease-in-out);
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  visibility: 1;
+  overflow: hidden;
+  opacity: 0;
+  background: $color--gradient-black;
+
+  &.cart--visible {
+    z-index: 10;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+
+    .cart__block {
+      right: 0;
+    }
+  }
+
+  .cart__block {
+    @include transition($transition-time--base all ease-in-out);
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: -435px;
+    overflow: scroll;
+    width: 435px;
+    height: 100%;
+    padding: 36px 28px;
+    background: $color--alice-blue;
+    @include bp-xs-small() {
+      width: 100%;
+      padding: 30px 20px;
+    }
+
+  }
+
+  .cart__heading {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .title {
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      font-size: $font-size--base;
+      font-weight: $font-weight--bold;
+    }
+
+    .close {
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      &::after {
+        content: "\e90d";
+        font-family: icomoon;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .cart__items {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $color--feldspar;
+    @include bp-xs-small() {
+      margin-bottom: 20px;
+    }
+  }
+
+  .cart__item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px transparentize($color--black, 0.95);
+
+    >img {
+      max-width: 68px;
+      margin-right: 14px;
+    }
+
+    .cart__item__title {
+      width: 100px;
+
+      >h5 {
+        font-size: $font-size--xs;
+        font-weight: $font-weight--bold;
+      }
+
+      >span {
+        font-size: $font-size--s;
+      }
+    }
+
+    .cart__item__form-wrap {
+      position: relative;
+      margin-right: 30px;
+      margin-left: 10px;
+      @include bp-xs-small(){
+        margin-right: 16px;
+      }
+       .form--cart {
+         position: relative;
+         min-width: 70px;
+         .value-button {
+           cursor: pointer;
+           height: 20px;
+           width: 20px;
+           position: absolute;
+           text-align: center;
+           &.cart-decrease-item {
+             left: 6px;
+            &:before {
+              content: '\e92b';
+              font-family: 'icomoon';
+              font-size: 10px;
+            }
+           }
+           &.cart-increase-item {
+             right: 6px;
+             &:before {
+               content: '\e92c';
+               font-family: 'icomoon';
+               font-size: 10px;
+             }
+           }
+         }
+       }
+    }
+
+    .form--cart {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 10px;
+      border: 1px solid $color--primary;
+      border-radius: 32px;
+
+      >input {
+        width: 32px;
+        text-align: center;
+        border: none;
+        background: transparent;
+      }
+    }
+  }
+
+  .cart__sub-total {
+
+    .subtotal,
+    .gst {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 0 17px;
+    }
+  }
+
+  .remove-link,
+  .add-link {
+    margin-left: 6px;
+    padding: 2px 8px;
+    color: $color--tawny-brown;
+    border-radius: 10px;
+    background: $color--karry;
+    font-size: 10px !important;
+  }
+
+  .remove-link {
+    color: $color--tawny-brown;
+    background: $color--karry;
+  }
+
+  .add-link {
+    color: $color--white;
+    background: $color--dodger-blue;
+  }
+
+  .cart__discount {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 17px 0 45px;
+    background: url("../assets/images/bbq-small.svg") no-repeat 17px top;
+    background-size: 20px;
+
+    .left {
+      flex: 0 0 220px;
+
+      >.heading {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+      }
+
+      >span,
+      a {
+        font-size: $font-size--xxs;
+        outline: none;
+      }
+
+      a.t-and-c-text {
+        color: $color--dodger-blue;
+      }
+    }
+
+    .right {
+      color: $color--dodger-blue;
+      font-weight: $font-weight--bold;
+    }
+  }
+
+  .cart__total {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px -28px 16px -28px;
+    padding: 25px 45px;
+    background: $color--karry;
+    @include bp-xs-small() {
+      margin: 20px -28px 20px -28px;
+      min-width: 50px;
+    }
+    span {
+      font-size: $font-size--xl;
+      font-weight: $font-weight--bold;
+    }
+  }
+
+  .cart__tnc {
+    padding: 0 17px;
+    font-size: $font-size--xs;
+
+    a {
+      color: $color--dodger-blue;
+    }
+  }
+
+  .button {
+    display: block;
+    margin: 42px auto 20px auto;
+    @include bp-xs-small() {
+      margin: 30px auto 0 auto;
+    }
+  }
+
+  .cart__voucher {
+    margin-top: 17px;
+    padding: 0 17px 0 45px;
+    background: url('../assets/images/discount-theme.svg') no-repeat;
+    background-position: 17px top;
+    background-size: 16px;
+
+    h5 {
+      &.coupon {
+        font-size: 10px;
+        color: $color--dodger-blue;
+      }
+    }
+
+    span {
+      font-size: 10px;
+    }
+  }
+
+  #cart-coupons {
+    display: none;
+
+    .coupon-card {
+      font-size: 12px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 10px;
+      border-radius: 10px;
+      transition: box-shadow 0.3s ease-in-out 0s;
+
+      &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .coupon-title {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .coupon-description {
+        opacity: 0.6;
+      }
+
+      .coupon-link {
+        a {
+          font-size: 10px;
+          text-transform: capitalize;
+          color: $color--dodger-blue;
+        }
+      }
+
+      .coupon-cta {
+        text-align: right;
+
+        a {
+          padding: 5px 8px;
+          border: 1px solid $color--primary;
+          color: $color--primary;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          display: inline-block;
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 10px;
+          transition: background 0.3s ease-in-out 0s, color 0.3s ease-in-out 0s;
+          line-height: normal;
+
+          &:hover {
+            background: $color--primary;
+            color: $color--white;
+          }
+        }
+
+      }
+
+      .coupon-code {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+
+        span {
+          font-weight: 600;
+          color: $color--dodger-blue;
+        }
+      }
+
+    }
+
+    #cart-coupons-vouchers-close {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      color: #d8a788;
+    }
+
+    .reservation__card {
+      border-radius: 4px;
+      margin-bottom: 30px;
+
+      .title {
+        color: #966257;
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

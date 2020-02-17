@@ -1,0 +1,117 @@
+slick:
+  remote: http://kenwheeler.github.io/slick/
+  version: 1.x
+  license:
+    name: MIT
+    url: https://github.com/kenwheeler/slick/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/slick/slick/slick.min.js: { weight: -3, minified: true }
+  css:
+    base:
+      /libraries/slick/slick/slick.css: {}
+      /libraries/slick/slick/slick-theme.css: {}
+  dependencies:
+    - core/jquery
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/main.js: {}
+    node_modules/jquery-ui/ui/widget.js: {}
+  dependencies:
+    - core/jquery
+    - bbq_nation/slick
+    - core/drupalSettings
+    - core/jquery.ui.datepicker
+    - core/jquery.cookie
+
+reservation:
+  js:
+    js/reservation.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+
+razorpay:
+  js:
+    https://checkout.razorpay.com/v1/checkout.js: { type: external }
+
+notification-styling:
+  css:
+    component:
+      node_modules/toastr/build/toastr.min.css: {}
+  js:
+    node_modules/toastr/build/toastr.min.js: {}
+  dependencies:
+    - core/jquery
+
+loader:
+  js:
+    node_modules/jq-fakeloader/dist/fakeLoader.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.dialog.ajax
+
+booking_rescheduling:
+  js:
+    js/booking.js: {}
+    node_modules/jquery-ui/ui/widget.js: {}
+  dependencies:
+    - select2/select2.min
+    - core/jquery.ui.datepicker
+    - core/jquery.ui.tabs
+
+booking:
+  css:
+    theme:
+      scss/components/_formElements.scss: {}
+  js:
+    js/booking.js: {}
+    node_modules/jquery-ui/ui/widget.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.ui.datepicker
+    - core/jquery.ui.tabs
+    - bbq_nation/loader
+
+voucher-checkout:
+  js:
+    js/voucher-checkout.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.ui.slider
+    - bbq_nation/loader
+    - bbq_nation/razorpay
+    - bbq_nation/jquery-confirm
+
+fcm:
+  js:
+    https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js: { type: external }
+    https://www.gstatic.com/firebasejs/7.1.0/firebase-messaging.js: { type: external }
+    js/fcm.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+jquery-confirm:
+  css:
+    component:
+      node_modules/jquery-confirm/dist/jquery-confirm.min.css: {}
+  js:
+    node_modules/jquery-confirm/dist/jquery-confirm.min.js: {}
+
+bootstrap-star-rating:
+  css:
+    component:
+      node_modules/font-awesome/css/font-awesome.min.css: {}
+      node_modules/bootstrap-star-rating/css/star-rating.min.css: {}
+      node_modules/bootstrap-star-rating/themes/krajee-fa/theme.min.css: {}
+  js:
+    node_modules/bootstrap-star-rating/js/star-rating.min.js: {}
+    node_modules/bootstrap-star-rating/themes/krajee-fa/theme.min.js: {}
+
+moment-js:
+  js:
+    node_modules/moment/min/moment.min.js: {}

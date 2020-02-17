@@ -1,0 +1,110 @@
+/**
+* Menu styling
+**/
+
+.menu {
+  @include no-bullet();
+  @include bp-medium() {
+    flex-direction: row;
+  }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  &.menu--vertical {
+    flex-direction: column;
+    .menu__item {
+      margin-bottom: 2px;
+    }
+  }
+  .menu__label {
+    margin: 1rem 0;
+    text-transform: uppercase;
+    color: $color--grey;
+    font-size: $font-size--s;
+  }
+  .menu__item {
+    @include bp-medium() {
+      white-space: nowrap;
+    }
+    position: relative;
+    overflow: visible;
+    flex: 0 0 auto;
+    margin-right: 2px;
+    white-space: unset;
+    a {
+      @include transition($transition-time--base all ease-in-out);
+      display: block;
+      padding: $menu--link-padding-vertical $menu--link-padding-horizontal;
+      text-decoration: none;
+      color: $color--black;
+      background: none;
+      line-height: 1;
+      transition: color 0.1s ease-in-out 0s;
+      outline: 0;
+      &:hover {
+        color: $color--link;
+      }
+      &.is-active {
+        color: $color--accent;
+        font-weight: $font-weight--semibold;
+      }
+    }
+    > .menu {
+      margin: 0.75rem 1.5rem;
+      padding-left: 1.5rem;
+      border-left: 1px solid $color--light-grey;
+    }
+  }
+}
+//Dropdown Menu
+.menu {
+  .menu__item--expanded {
+    position: relative;
+    & > .menu__link {
+      padding-right: $menu--link-padding-right + 0.5rem;
+      &:after {
+        @include triangle("down", 6px, $color--primary);
+        @include translate(-50%, 0);
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+      }
+    }
+    > .menu {
+      @include transition($transition-time--base all ease-in-out);
+      position: absolute;
+      z-index: 1;
+      top: 2rem;
+      visibility: hidden;
+      flex-direction: column;
+      min-width: $menu--submenu-min-width;
+      margin: 0;
+      padding: $menu--link-padding-vertical $menu--link-padding-horizontal;
+      opacity: 0;
+      border: none;
+      background: $color--whisper;
+      .a {
+        color: $color--dark-grey;
+        background: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &:hover {
+      > .menu {
+        top: 2.5rem;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+.menu--main {
+  a {
+    font-size: $font-size--xs;
+    font-weight: $font-weight--semibold;
+  }
+}

@@ -1,0 +1,84 @@
+<div class="form--banner">
+  <img src="{{ base_path ~ directory }}/assets/images/bbq-logo-theme.svg" class="form-logo"alt="bbq-logo">
+  <a href="#" class="close" id="close-popup"></a>
+  <input type="hidden" id="bbq-branch-id" value>
+  <div class="form--banner-title">
+    Let us serve you better
+  </div>
+  <div class="form--banner-description">
+    Don’t wait in a line to enjoy your meal. Reserve a table in advance with us.
+  </div>
+  <form id="initial-booking-form">
+    <div class="input--group">
+      <label>
+        Location
+      </label>
+      <div class="input--select-custom branch-dropdown-options">
+        <select class="js-states form-control branch-dropdown">
+          <option value="0">Select Location</option>
+        </select>
+      </div>
+    </div>
+    <div class="input--group">
+      <div class="input--group-pick row align-end space-between">
+        <div class="input--group-pick--grid">
+          <label>
+            Date
+          </label>
+          <div class="radio--custom">
+            <input class="booking-today" id="today"  name="date" type="radio" checked>
+            <label for="today">Today</label>
+            <input class="booking-tomorrow" id="tomorrow" name="date" type="radio">
+            <label for="tomorrow">Tomorrow</label>
+          </div>
+        </div>
+        <div class="input--group-pick--grid">
+          <div class="datepicker">
+            <input type="text" name="datepicker" id="datepicker" class="booking-datepicker" placeholder="Pick a date" readonly="true">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input--group">
+      <div class="input--group-pick row align-end space-between">
+        <div class="input--group-pick--grid">
+          <label>
+            Session
+          </label>
+          <div class="radio--custom">
+            <input id="lunch" name="session" class="lunch" type="radio">
+            <label for="lunch">Lunch</label>
+
+            <input id="dinner" name="session" class="dinner" type="radio">
+            <label for="dinner">Dinner</label>
+          </div>
+        </div>
+        <div class="input--group-pick--grid">
+          <label>
+            Choose Time
+          </label>
+          <div class="datepicker">
+            <div class="input--select-custom">
+              <select class="js-states form-control slot-dropdown">
+                <option value="0">Select Time</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input--group-button">
+      <input id="reserve-button" type="submit" value="Reserve Table" class="show-reservation">
+      <div class="input--group-button--beat"></div>
+    </div>
+  </form>
+</div>
+<div class="mobile-reserve-button">
+  <div class="input--group-button sticky">
+    <input id="reserve-button" type="submit" value="Reserve Table" class="show-reservation">
+    <div class="input--group-button--beat"></div>
+  </div>
+</div>
+
+<div class="fakeLoader"></div>
+{{ attach_library('bbq_nation/booking') }}

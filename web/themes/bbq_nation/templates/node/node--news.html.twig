@@ -1,0 +1,42 @@
+{% set pageName = 'NewsDetail' %}
+<div class="layout-container">
+  <div class="news--detailed">
+    <h3 class="news--detailed-title">
+      {{ node.label }}
+    </h3>
+    <div class="news--detailed-data">
+      <div class="news--detailed-date">
+        {{ node.field_date.value|date("d F Y") }}
+      </div>
+      <div class="news--detailed-share-button">
+        <button class="button button--icon-text button--share">{{ drupal_block('addtoany_block') }}</button>
+      </div>
+    </div>
+    <div class="news--detailed-news-image">
+      <img src="{{ file_url(node.field_image[0].entity.uri.value) }}" alt="{{ node.field_image[0].alt  }}" class="news--detailed-news-field-image"/>
+    </div>
+    <div class="news--detailed-content space-between">
+      <div class="news--detailed-left-content">
+        <div class="news--detailed-description">
+          {{ content.body | raw }}
+        </div>
+      </div>
+      <div class="news--detailed-right-content">
+        {% set category_count = drupal_view_result('categories_of_news', 'block_1')|length %}
+        {% if category_count > 0 %}
+          <div class="news--detail-category-block">
+            <h3>CATEGORIES</h3>
+            {{ drupal_view('categories_of_news', 'block_1') }}
+          </div>
+        {% endif %}
+        {% set recent_post_count = drupal_view_result('recent_post', 'block_1')|length %}
+        {% if recent_post_count > 0 %}
+          <div class="news--detailed-recent-post">
+            <h3>WHAT'S NEW</h3>
+            {{ drupal_view('recent_post', 'block_1') }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

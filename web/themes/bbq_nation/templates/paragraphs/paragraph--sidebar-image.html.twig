@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the sidebar image paragraph.
+ */
+#}
+
+{% set classes = [
+  'paragraph paragraph__thumb-block',
+] %}
+
+{% if paragraph.field_image_side.value == "Right" %}
+  {% set imagePosition = 'image__right' %}
+{% endif %}
+
+{% block content %}
+  <div{{ attributes.setattribute('class', classes) }}>
+    <div class="layout-container">
+      <div class="paragraph paragraph__thumb-grid">
+    <div class="paragraph__thumb-grid--content row space-between {{ imagePosition }}">
+      <div class="image--block">
+        {{ content.field_image }}
+      </div>
+      <div class="paragraph__content-block">
+        {% if content.field_title|render|trim is not empty %}
+          <div class="paragraph__title">
+            {{ content.field_title }}
+          </div>
+        {% endif %}
+        {% if content.field_summary|render|trim is not empty %}
+          <div class="paragraph__content">
+            {{ content.field_summary }}
+          </div>
+        {% endif %}
+        {% if content.field_link|render|trim is not empty %}
+            <div class="paragraph__cta">
+              {{ content.field_link }}
+            </div>
+        {% endif %}
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+/**
+* Table styling
+*/
+
+table {
+  max-width: 100%;
+  margin-bottom: 1.2rem;
+  table-layout: auto;
+  border: solid 1px $color--light-grey;
+  background: $color--white;
+  thead {
+    background: $color--whisper;
+  }
+  tr th {
+    font-weight: $font-weight--semibold;
+  }
+  tr td {
+    font-size: $font-size--xs;
+  }
+  tr th,
+  tr td {
+    @include bp-xs-small {
+      padding: 0.4rem 0.4rem;
+      vertical-align: middle;
+    }
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: $font-size--s;
+    line-height: 1;
+  }
+  tr {
+    &:nth-of-type(even) {
+      background: $color--white-smoke;
+    }
+  }
+}

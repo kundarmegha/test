@@ -1,0 +1,46 @@
+/**
+* Grid styling
+**/
+
+@mixin grid($wrap: false) {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  margin-left: -$grid--gutter;
+  margin-right: -$grid--gutter;
+  margin-top: -$grid--gutter;
+  margin-bottom: $grid--gutter;
+  @include bp-small {
+    @if $wrap==true {
+      flex-flow: row wrap;
+    } @else {
+      flex-flow: row nowrap;
+    }
+  }
+}
+
+@mixin griditem {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  padding: $grid--gutter;
+}
+
+.grid {
+  @include grid($wrap: false);
+  .grid__item {
+    @include griditem();
+    @for $i from 1 to $grid-columns+1 { //@todo need to add more stable code.
+      &.grid--#{$i} {
+        //flex: 1 1 0;
+        //width: 100%;
+        //@include bp-small {
+        flex: none;
+        width: percentage($i / $grid-columns);
+        //}
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+name: test_module
+type: custom
+core: 8.x
+hidden: true

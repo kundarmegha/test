@@ -1,0 +1,28 @@
+name: BBQ Nation
+type: theme
+description: 'Custom Theme for BBQ'
+package: Other
+core: 8.x
+libraries:
+  - bbq_nation/global-styling
+  - bbq_nation/notification-styling
+  - bbq_nation/loader
+  - bbq_nation/voucher-checkout
+  - bbq_nation/fcm
+  - bbq_nation/bootstrap
+  - select2/select2.min
+  - bbq_nation/moment-js
+
+
+base theme: classy
+
+regions:
+  header_left: Header Left
+  header_center: Header Center
+  header_right: Header Right
+  sidebar_first: Sidebar First
+  content: Content
+  footer_first: Footer First
+  footer_second: Footer Second
+  footer_third: Footer Third
+  footer_bottom: Footer Bottom

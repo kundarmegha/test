@@ -1,0 +1,138 @@
+.card--voucher {
+  @include bp-large() {
+    width: 295px;
+    height: 170px;
+    margin: 0 24px 24px 0;
+  }
+  position: relative;
+  width: 100%;
+  max-width: unset;
+  height: 200px;
+  margin: 0 0 24px 0;
+  color: $color--white;
+  border-radius: 10px;
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+  .card__media {
+    @include overlay();
+    z-index: -1;
+    &:before {
+      @include overlay();
+      content: "";
+      background-image: linear-gradient(to right, rgba(0,0,0,0.8), $color--gradient-white);
+    }
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .card__header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 10px 25px;
+    font-weight: $font-weight--semibold;
+    .unit {
+      font-size: 14px;
+    };
+    .price {
+      font-size: $font-size--base;
+    }
+  }
+  .card__footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 25px;
+    .card__footer__form-wrap {
+      display: none;
+    }
+    .form--atc {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      .value-button,
+      input {
+        flex: 0 0 20px;
+      }
+      .value-button {
+        height: 20px;
+        text-align: center;
+        border: 1px solid $color--primary;
+        border-radius: 50%;
+        font-size: $font-size--xxs;
+        font-weight: $font-weight--bold;
+        line-height: 17px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      input {
+        text-align: center;
+        color: $color--white;
+        border: none;
+        background: none;
+        font-size: $font-size--xs;
+        font-weight: $font-weight--bold;
+      }
+    }
+    .info {
+      text-transform: uppercase;
+      font-size: $font-size--xxs;
+      font-weight: $font-weight--medium;
+    }
+  }
+}
+
+.promotion-card {
+  height: 353px;
+
+  .promotion-text {
+    font-weight: bold;
+  }
+
+  .promotion-footer {
+    display: inline-block;
+  }
+
+  .info {
+    padding-top: 10px;
+  }
+
+  .promotion-arrow-right {
+    &::after {
+      content: "\e915";
+      font-family: "icomoon";
+      color: #ff6301;
+    }
+  }
+
+}
+
+
+.promotion-card {
+  .events--card {
+    margin: 0 0 15px;
+    height: 335px;
+    max-width: 280px;
+
+    @include bp-xs-small() {
+      max-width: 100%;
+      width: 100% !important;
+    }
+    @include bp-small() {
+      max-width: 100%;
+    }
+    @include bp-medium() {
+      max-width: 100%;
+    }
+  }
+}

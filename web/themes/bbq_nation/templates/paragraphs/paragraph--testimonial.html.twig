@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the testimonial paragraph.
+#}
+
+{#{% extends "paragraph.html.twig" %}#}
+{% block content %}
+  <div class="paragraph__testimonials">
+    <div class="paragraph__testimonial-card">
+      <div class="paragraph__testimonial-card--image">
+        {{ content.field_image }}
+      </div>
+      <div class="paragraph__testimonial-card--content">
+        {{ content.field_summary }}
+      </div>
+      <div class="paragraph__testimonial-card--name">
+        {{ content.field_name }}
+      </div>
+      <div class="paragraph__testimonial-card--designation">
+        {{ content.field_designation }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

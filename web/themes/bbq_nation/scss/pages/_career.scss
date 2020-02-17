@@ -1,0 +1,161 @@
+.page-node-type-job-postings {
+  background: $color--white;
+
+  .career--detailed {
+    @include bp-large() {
+      padding: 20px 0px;
+    }
+
+    .career-header {
+      margin: 30px 0 0;
+
+      @include bp-small {
+        margin: 50px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .career--detailed-title {
+      font-size: $font-size--xxxl;
+      font-weight: $font-weight--medium;
+
+      @include bp-xs-small {
+        font-size: 20px;
+      }
+
+      @include bp-medium {
+        font-size: $font-size--title;
+      }
+    }
+
+    .cta__link {
+      margin: 10px 0;
+      .job__apply {
+        padding: 5px 12px;
+        background: $color--primary;
+        color: $color--white;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 50px;
+        border: 1px solid $color--primary;
+
+        &:hover {
+          background: $color--white;
+          border: 1px solid $color--primary;
+          color: $color--primary;
+          transition: all 0.4s ease-in-out;
+        }
+      }
+    }
+
+    .career--detailed-data {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include bp-xs-small {
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .career--detailed-location {
+        flex: 0 1 50%;
+        @include bp-xs-small {
+          flex: 0 1 50%;
+          margin-top: 10px;
+          font-size: $font-size--xxs;
+          background-position: left 1px;
+          margin-bottom: 0;
+        }
+        font-size: $font-size--base;
+        font-weight: $font-weight--medium;
+        color: rgba(31, 31, 31, 0.5);
+        margin-bottom: 20px;
+      }
+    }
+
+    .career--detailed-content {
+      display: flex;
+      flex-wrap: wrap;
+      word-break: break-word;
+      flex: 0 1 100%;
+      @include bp-small {
+        margin-bottom: 20px;
+      }
+      @include bp-xs-small {
+        padding-right: 0px;
+      }
+      @include bp-medium {
+        flex: 0 1 100%;
+      }
+
+      h3 {
+        color: $color--primary;
+        padding-bottom: 15px;
+        margin-top: 15px;
+      }
+
+      .career--detailed-description {
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+        font-size: $font-size--base;
+        font-weight: 300;
+        @include bp-medium {
+          margin-bottom: 20px;
+          line-height: 32px;
+        }
+        @include bp-xs-small {
+          font-size: $font-size--s;
+        }
+      }
+    }
+  }
+
+  #webform-job-posting {
+    margin: 30px 0;
+  }
+
+  .webform--current-job-opening {
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+    padding-bottom: 14px;
+    border-radius: 4px;
+    margin-top: 10px;
+    border: 1px solid transparent;
+    -webkit-transition: border 0.3s ease-in-out 0s;
+    transition: border 0.3s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 40px rgba(0,0,0,0.06);
+    box-shadow: 0 0 40px rgba(0,0,0,0.06);
+
+    @include bp-medium {
+      width: 50%;
+    }
+
+    .webform-button--submit {
+      margin: 0 !important;
+      border-radius: 5px !important;
+      border: 1px solid $color--primary;
+      @include bp-xs-small(){
+        padding: 10px;
+      }
+
+      &:hover {
+        background: $color--white;
+        border: 1px solid $color--primary;
+        color: $color--primary;
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+}
+
+.career-page {
+  .ui-button {
+    .ui-icon {
+      background-image: url('../assets/images/close.svg');
+    }
+  }
+}

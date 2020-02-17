@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Theme override for image gallery field.
+ */
+#}
+  {% for item in items %}
+    <div class="paragraph__gallery-image">
+      {{ item.content }}
+    </div>
+  {% endfor %}

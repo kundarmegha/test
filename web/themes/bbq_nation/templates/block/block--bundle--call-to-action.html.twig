@@ -1,0 +1,28 @@
+{#
+/**
+ *  Template for the call to action block.
+ */
+#}
+<div class="cta-block">
+  <div class="cta__banner">
+    {{ content.field_image }}
+    <div class="cta__content">
+      {% if content.field_title|render|striptags %}
+        <div class="cta__title">
+          {{ content.field_title }}
+        </div>
+      {% endif %}
+
+      {% if content.field_subtitle|render|striptags %}
+        <div class="cta__subtitle">
+          {{ content.field_subtitle }}
+        </div>
+      {% endif %}
+      {% if content.field_link|render|striptags %}
+        <div class="cta__link">
+          {{ content.field_link }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

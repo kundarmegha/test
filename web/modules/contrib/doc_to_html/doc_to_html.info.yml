@@ -1,0 +1,12 @@
+name: DOC to HTML
+type: module
+description: Import Doc File to HTML
+# core: 8.x
+package: Fields
+configure: doc_to_html.import_to_field
+
+# Information added by Drupal.org packaging script on 2019-01-25
+version: '8.x-1.6'
+core: '8.x'
+project: 'doc_to_html'
+datestamp: 1548431284

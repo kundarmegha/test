@@ -1,0 +1,85 @@
+.update {
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 550px;
+  position: relative;
+  margin-bottom: 60px;
+
+  @include bp-xs-small() {
+    margin-bottom: 20px;
+  }
+
+  @include bp-small() {
+    height: 480px;
+  }
+
+  @include bp-medium() {
+    margin-bottom: 60px;
+    height: 550px;
+  }
+
+  &--thumbnail {
+    @include bp-xs-small() {
+      height: 250px;
+    }
+
+    @include bp-medium() {
+      height: 260px;
+    }
+    img {
+        object-fit: unset;
+    }
+  }
+
+  &--content {
+    padding: 35px 30px 45px;
+    @include bp-small(){
+      padding: 30px 20px 30px;
+    }
+    @include bp-medium(){
+      padding: 35px 30px 45px;
+    }
+    &-date {
+      font-size: 12px;
+      padding-left: 17px;
+      background: url('../assets/images/calendar (1).svg') no-repeat;
+      background-position: left 3px;
+      background-size: 12px;
+      font-weight: 500;
+      color: rgba(31, 31, 31, 0.5);
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      overflow: hidden;
+      max-height: 54px;
+    }
+
+    &-description {
+      overflow: hidden;
+      line-height: 28px;
+      max-height: 60px;
+      font-weight: 300;
+    }
+
+    &-link {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 500;
+      position: absolute;
+      bottom: 45px;
+      a {
+        transition: color 0.2s ease-in-out 0s;
+        outline: none;
+        &:hover {
+          color: $color--link;
+        }
+      }
+    }
+  }
+
+}

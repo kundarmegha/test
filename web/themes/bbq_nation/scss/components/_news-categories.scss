@@ -1,0 +1,14 @@
+.news--categories-info{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid $color--news-border;
+.news--categories-title{
+  font-weight: $font-weight--semibold;
+}
+  .news--categories-count{
+    opacity: .6;
+    font-weight: $font-weight--semibold;
+    }
+}

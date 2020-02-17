@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the banner slider paragraph.
+ */
+#}
+
+{% extends "paragraph.html.twig" %}
+{% block content %}
+  <div class="paragraph__banner-slider row align-center">
+  <div class="layout-container">
+  <div class="paragraph__content">
+    {% if content.field_title|render|trim is not empty %}
+      <h3 class="paragraph__title">
+        {{ content.field_title }}
+      </h3>
+    {% endif %}
+    {% if content.field_sub_title|render|trim is not empty %}
+      <h3 class="paragraph__subtitle">
+        {{ content.field_sub_title }}
+      </h3>
+    {% endif %}
+    {% if content.field_link|render|trim is not empty %}
+    <div class="paragraph__cta_link">
+      {{ content.field_link }}
+    </div>
+    {% endif %}
+  </div>
+  </div>
+  <div class="paragraph__media paragraph__image">
+      {{ content.field_image }}
+  </div>
+  </div>
+{% endblock %}

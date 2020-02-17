@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the testimonial paragraph.
+#}
+
+{% extends "paragraph.html.twig" %}
+{% block content %}
+  <div class="testimonal-object">
+    {% if content.field_title|render|striptags %}
+      <div class="testimonial__title">
+        {{ content.field_title }}
+      </div>
+    {% endif %}
+    {% if content.field_testimonial_objects|render|striptags %}
+    <div class="layout-container paragraph__testimonial">
+    <div class="paragraph__testimonial-carousel">
+      <div class="paragraph__testimonial-section">
+        {{ content.field_testimonial_objects }}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  </div>
+{% endblock %}

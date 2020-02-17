@@ -1,0 +1,87 @@
+{% set pageName = 'Vouchers' %}
+{% set variation = product['variations'][0]['#commerce_product_variation'] %}
+{% block content %}
+  <div class="layout-container">
+    <div class="voucher--info">
+      <div class="voucher__wrapper">
+        <div class="content__image">
+          <div class="content__header">
+            <h1>More Details About Voucher </h1>
+          </div>
+          {% embed "@bbq_nation/partials/components/includes/voucher_card.html.twig" %}
+            {% set card_image %}
+              {{ file_url(product.field_voucher_banner['#items'].entity.uri.value) }}
+            {% endset %}
+            {% set card_header %}
+              {{ variation.title.value }}
+            {% endset %}
+            {% set price %}
+              {{ product.variation_price['#items'][0].number|number_format(2, '.', ',') }}
+            {% endset %}
+            {% set product_id %}
+              {{- variation.variation_id.value -}}
+            {% endset %}
+          {% endembed %}
+        </div>
+      </div>
+      <div class="voucher__description">
+        <div class="overlay-wrapper">
+          <div class="voucher-info overlay-content">
+            <div class="info__header">
+              <h1>More Details About Voucher</h1>
+              <a href="#" class="close"></a>
+            </div>
+            <div class="info__content">
+              {% if product.field_days_along_slot|render %}
+              {% set paragraph_name = product.field_days_along_slot %}
+              <div class="info">
+                <h3>Timings</h3>
+                <div>
+                {% for item in paragraph_name['#items'] %}
+                  {{ drupal_entity('paragraph', item.target_id) }}
+                {% endfor %}
+                </div>
+              </div>
+              {% endif %}
+              {% if product.field_applicable_on['#items'][0].value|render is not empty %}
+              <div class="info">
+                <h3>Applicable on</h3>
+                <div class="info__valid-date">
+                  {{ product.field_applicable_on['#items'][0].value|striptags }}
+                </div>
+              </div>
+              {% endif %}
+              {% if product.field_cancellation_policy['#items'][0].value|render is not empty %}
+                <div class="info">
+                <h3>Cancellation Policy</h3>
+                <p>{{ product.field_cancellation_policy['#items'][0].value|striptags|replace({ "\n": " " })|replace({ "&nbsp;": " " }) }}</p>
+              </div>
+              {% endif %}
+              {% if product.field_not_valid_on['#items'][0].value|render is not empty %}
+              <div class="info">
+                <h3>Not valid on</h3>
+                <div class="info__valid-date">
+                    {{ product.field_not_valid_on['#items'][0].value }}
+                </div>
+              </div>
+              {% endif %}
+              {% if product.field_use_this_within['#items'][0].value|render is not empty %}
+              <div class="info">
+                <h3>Use this within</h3>
+                <p>{{ product.field_use_this_within['#items'][0].value|striptags }}</p>
+              </div>
+              {% endif %}
+              {% if product.field_terms_and_condition['#items'][0].value|render is not empty %}
+              <div class="info">
+                <h3>Things to remember</h3>
+                {{ product.field_terms_and_condition['#items'][0].value|raw }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        </body>
+      </div>
+    </div>
+  </div>
+{% endblock %}

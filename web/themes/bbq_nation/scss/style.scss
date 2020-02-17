@@ -1,0 +1,21 @@
+/*
+****************************************************************************************************************
+N.B please don't write any styling in this file. This file is used only to import the styles from the framework.
+****************************************************************************************************************
+*/
+/**
+  Main sass file.
+ */
+@import "vendor/vendor";
+@import "settings/settings";
+@import "settings/reset";
+@import "base/base";
+@import "typography/typography";
+@import "helper/helper";
+@import "components/components";
+@import "modules/modules";
+@import "layout/layout";
+@import "pages/pages";
+@import "paragraphs/paragraphs";
+@import "../node_modules/toastr/toastr";
+@import "../node_modules/jq-fakeloader/scss/fakeLoader";

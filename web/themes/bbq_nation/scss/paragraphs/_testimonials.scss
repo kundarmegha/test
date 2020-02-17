@@ -1,0 +1,100 @@
+.paragraph__testimonial {
+  .paragraph__testimonial-carousel {
+    width: calc(100% + 60px); //we need more width for the shadows on the edges
+    padding: 0 15px; //space for the shadows
+    //   margin-left: -15px; //put the div in its original position
+    margin: 0 -30px;
+    overflow: hidden; //hide the overflow
+  }
+
+  .paragraph__testimonial-section {
+    &.slick-slider {
+      margin-bottom: 0;
+    }
+
+    .slick-list {
+      box-sizing: initial;
+      padding: 20px 25px 10px;
+      @include bp-xs-small {
+        padding: 20px 25px 30px;
+      }
+    }
+
+    .slick-slide {
+      &.slick-active {
+        .paragraph__testimonial-card {
+          box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06); //only the active slides have the shadow
+        }
+      }
+    }
+  }
+}
+.testimonal-object {
+  margin-bottom: 40px;
+  @include bp-medium {
+    margin-bottom: 20px;
+  }
+
+  .testimonial__title {
+    font-size: $font-size--xl;
+    font-weight: $font-weight--medium;
+    max-width: $layout--container-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 22px;
+    margin-bottom: -16px;
+    @include bp-small {
+      font-size: $font-size--xxxl;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.paragraph__testimonial-card {
+  @include bp-xs-small {
+    margin: 0;
+    width: 100%;
+    padding: 35px 40px;
+  }
+
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+  padding: 35px 40px 80px;
+  margin: 0 10px 70px;
+  text-align: center;
+  box-shadow: none; //no shadow for a hidden slide
+  transition: box-shadow 0.1s ease-in-out; //little effect to fade the shadow
+
+  .paragraph__testimonial-card--image .field-image {
+    height: 120px;
+    width: 120px;
+    margin: 0 auto;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 60px;
+    }
+  }
+
+  .paragraph__testimonial-card--content {
+    opacity: 0.8;
+    line-height: 24px;
+    margin: 30px 0;
+    height: 120px;
+    color: $color--label;
+    font-weight: 300;
+  }
+
+  .paragraph__testimonial-card--name {
+    font-weight: 600;
+    color: $color--submit-button;
+  }
+
+  .paragraph__testimonial-card--designation {
+    opacity: 0.8;
+    margin-top: 5px;
+    color: $color--label;
+  }
+}

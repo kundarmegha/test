@@ -1,0 +1,397 @@
+<div class="reservation__block">
+  <input type="hidden" id="rescheduled-booking-id" value="">
+  <div id="reservation-info">
+    <div class="reservation__heading">
+      <h3 class="title">Reservation Info</h3>
+      <a href="#" role="button" class="reservation__heading-action" id="curtain-close">Cancel</a>
+    </div>
+    <div class="basic-info__form reservation__card">
+      <div class="reservation__heading">
+        <h3 class="title">
+          Basic info
+          <span>*</span>
+        </h3>
+        <a href="#" role="button" class="reservation__heading-action" id="basic-info__form-done">Done</a>
+      </div>
+      <div class="basic-info__block">
+        <div class="input--group test">
+          <label>
+            Location
+          </label>
+          <div class="input--select-custom branch-dropdown-options">
+            <select class="js-states form-control branch-dropdown"></select>
+          </div>
+        </div>
+        <div class="basic-info__amenities">
+          <div class="basic-info-carousel amenity-images"></div>
+        </div>
+        <div class="input--group">
+          <div class="input--group-pick row align-end space-between">
+            <div class="input--group-pick--grid">
+              <label>
+                Date
+              </label>
+              <div class="radio--custom">
+                <input id="basic-today" class="booking-today" name="basic-date" type="radio" checked>
+                <label for="basic-today">Today</label>
+                <input id="basic-tomorrow" class="booking-tomorrow" name="basic-date" type="radio">
+                <label for="basic-tomorrow">Tomorrow</label>
+              </div>
+            </div>
+            <div class="input--group-pick--grid">
+              <div class="datepicker">
+                <input type="text" name="datepicker" id="booking-datepicker" class="booking-datepicker" placeholder="Pick a date">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="input--group">
+          <div class="input--group-pick row align-end space-between">
+            <div class="input--group-pick--grid">
+              <label>
+                Session
+              </label>
+              <div class="radio--custom">
+                <input id="basic-lunch" name="basic-session" class="lunch" type="radio">
+                <label for="basic-lunch">Lunch</label>
+
+                <input id="basic-dinner" name="basic-session" class="dinner" type="radio">
+                <label for="basic-dinner">Dinner</label>
+              </div>
+            </div>
+            <div class="input--group-pick--grid">
+              <label>
+                Time
+              </label>
+              <div class="datepicker">
+                <div class="input--select-custom">
+                  <select class="js-states form-control slot-dropdown"></select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="basic-info__card reservation__card">
+      <div class="reservation__heading">
+        <h3 class="title">
+          Basic info
+          <span>*</span>
+        </h3>
+        <a href="#" role="button" class="reservation__heading-action" id="basic-info__card-close">Change</a>
+      </div>
+      <div class="basic-info__block">
+        <div class="basic-info__location row align-center">
+          <div id="selected-branch-name"></div>
+          <a href="#" class="basic-info__edit" role="button"></a>
+        </div>
+        <div class="basic-info__schedule row align-center">
+          <div class="basic-info__date row align-center">
+            <div id="selected-reservation-date"></div>
+            <a href="#" class="basic-info__edit" role="button"></a>
+          </div>
+          <div class="basic-info__time row align-center">
+            <div id="booking-slot-value"></div>
+            <a href="#" class="basic-info__edit" role="button"></a>
+          </div>
+        </div>
+        <div class="basic-info__footer row space-between">
+          <div class="basic-info__amenities">
+            <div class="basic-info-carousel amenity-images"></div>
+          </div>
+          <div class="basic-info__menu" id="booking-menu-items">
+            <a href="#" role="button">
+              <div class="basic-info__menu-icon">
+                <img src="{{ base_path ~ directory }}/assets/images/Untitled-1-27.svg" alt="">
+              </div>
+              Menu
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="basic-info__image">
+        <img id="branch-background-image" alt="">
+      </div>
+    </div>
+    <div class="basic-info__menu-block">
+      <div class="reservation__heading">
+        <h3 class="title">Food menu</h3>
+        <a href="#" role="button" class="reservation__heading-action" id="basic-info__menu-close">Cancel</a>
+      </div>
+      <div id="menu-tab" class="menu-tab">
+        <ul class="row">
+          <li>
+            <a href="#menu-tab-1" class="booking-menu-tab-1" id="menu-tab-1-main">Buffet</a>
+          </li>
+          <li>
+            <a href="#menu-tab-2" class="booking-menu-tab-2" id="menu-tab-2-main">A La Carte Menu</a>
+          </li>
+          <li>
+            <a href="#menu-tab-3" class="booking-menu-tab-3" id="menu-tab-3-main">Beverages</a>
+          </li>
+        </ul>
+        <div id="menu-tab-1">
+          <div class="reservation__item-menu__block">
+            <div id="buffet-menu" class="accordion"></div>
+          </div>
+        </div>
+        <div id="menu-tab-2">
+          <div class="reservation__item-menu__block">
+            <div id="a-la-carte-menu" class="accordion"></div>
+          </div>
+        </div>
+        <div id="menu-tab-3">
+          <div class="reservation__item-menu__block">
+            <div id="beverages-menu" class="accordion"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reservation__card food-preferences" id="booking-food-preferences">
+      <div class="reservation__heading">
+        <h3 class="title">
+          Food Preferences
+        </h3>
+      </div>
+      <div id="buffet-items" class="reservation__items"></div>
+    </div>
+    <div class="reservation__sub-total">
+      <div class="subtotal">
+        <h5>Sub Total</h5>
+        <span id="booking-sub-total"></span>
+      </div>
+      <div id="booking-tax-details"></div>
+    </div>
+    <div class="reservation__discount" id="booking-loyalty-points"></div>
+    <div id="booking-applied-vouchers" class="reservation__voucher align-center"></div>
+    <div class="reservation__apply-vouchers">
+      <a href="#" id="booking-show-vouchers" role="button">Apply Vouchers</a>
+    </div>
+    <div class="reservation__apply-vouchers">
+      <a href="#" id="booking-show-coupons" role="button">Apply Coupons</a>
+    </div>
+    <div class="reservation__corporate-offers">
+      <div class="heading row align-center">
+        <a href="#" role="button" class="reservation__corporate-link">Corporate Offers</a>
+        <a href="#" class="success" id="corporate-offer-applied-badge"></a>
+{#        <a href="#" class="remove-link" id="remove-corporate-offer-button">Remove</a>#}
+      </div>
+      <a href="#" class="t-and-c-text">*T&amp;Cs applicable</a>
+    </div>
+    <div class="reservation__total">
+      <h5>Total</h5>
+      <span id="booking-total"></span>
+    </div>
+    <div class="reservation__tnc t-and-c-text">
+      *estimated prices and subject to change. all prices in INR
+      <br><a href="#">Read More</a>
+    </div>
+    <button id="booking-reserve-button" class="button button--submit">RESERVE TABLE</button>
+  </div>
+
+  {#  additional #}
+
+  <div id="coupons-vouchers">
+    <div class="reservation__heading">
+      <h3 class="title">Apply Coupons/Vouchers</h3>
+      <a href="#" role="button" class="reservation__close_button" id="coupons-vouchers-close">Close</a>
+    </div>
+{#    <div class="coupon-input">#}
+{#      <input id="apply-coupon-value" type="text" placeholder="Enter coupons / vouchers code">#}
+{#      <input id="apply-coupon" type="submit" value="Apply">#}
+{#    </div>#}
+    <div class="reservation__card">
+      <div class="reservation__heading">
+        <h3 id="available-coupons-label" class="title">Available Coupons</h3>
+      </div>
+      <div class="coupon-block" id="coupons-listing">
+      </div>
+    </div>
+  </div>
+  <div id="corporate-offer">
+    <div class="corporate-block">
+      <div class="corporate-title">
+        Corporate offer
+        <a href="#" role="button" id="corporate-offer-close">
+          <img src="{{ base_path ~ directory }}/assets/images/close.svg" alt="">
+        </a>
+      </div>
+      <div class="corporate-form" id="corporate-form">
+        <div id="corporate-email">
+          <div class="input-group">
+            <label for="booking-corporate-email">Company Email</label>
+            <input type="email" name="email" id="booking-corporate-email">
+          </div>
+          <div class="corporate-verify" id="enter-email">
+            <span id="booking-corporate-email-label">Please verify email address by clicking the button below.</span>
+            <input id="booking-corporate-email-submit" type="submit" value="Verify email">
+          </div>
+          <div class="corporate-verify" id="verify-otp">
+            <span id="corporate-otp-label">Enter the verification code that we sent you</span>
+            <div class="corporate-verify--bottom row align-center space-between">
+              <div class="row align-center">
+                <input type="number" id="booking-corporate-otp">
+              </div>
+              <input type="submit" value="Verify" id="verify-otp-cta">
+              <a href="#" class="resend-otp inactive" id="booking-resend-corporate-otp">Resend OTP</a>
+            </div>
+          </div>
+          <div class="corporate-verify" id="verify-status">
+            <div class="corporate-verify__status row align-center">
+              <span class="success"></span>
+              Your email has been successfully verified
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="reservation__success">
+    <div class="reservation__success__icon"></div>
+    <div class="reservation__success__text">
+      You have successfully reserved your table
+    </div>
+    <div class="reservation__success__id">
+      Reservation Reff.
+      <span id="booking-id">#B00234567IN890123</span>
+    </div>
+    <div class="reservation__success__details row align-center space-between">
+      <div class="reservation__success__left">
+        <p id="booking-confirmed-branch-name"></p>
+        <p id="booking-confirmed-reservation-date"></p>
+      </div>
+      <div class="reservation__success__right">
+        <div id="booking-confirmation-navigation"></div>
+        <div id="booking-confirmation-call"></div>
+      </div>
+    </div>
+    <div class="reservation__success__preference" id="booking-confirmation-buffet-items">
+    </div>
+    <div class="reservation__success__breakup">
+      <div class="reservation__success__points row align-center space-between" id="booking-confirmation-loyalty-points-block">
+        <div class="reservation__success__left">BBQN smiles redeemed</div>
+        <div class="reservation__success__right" id="booking-confirmation-loyalty-points"></div>
+      </div>
+      <div class="reservation__success__amount row align-center space-between">
+        <div class="reservation__success__left">Estimated total</div>
+        <div class="reservation__success__right" id="booking-confirmed-bill-total"></div>
+      </div>
+      <div class="reservation__success__amount row align-center space-between" id="advance-amount-block">
+        <div class="reservation__success__advance">
+          <a href="#">
+            Pay Advance Amount
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="reservation__success__action row align-center space-between">
+      <a href="#" class="share-reservation">
+        <img src="/themes/custom/bbq_nation/assets/images/share_orange.svg">
+        Share
+      </a>
+{#      <a href="#" class="reservation__success__cancel">#}
+{#        Cancel#}
+{#      </a>#}
+{#      <a href="#" class="reservation__success__reschedule">#}
+{#        Reschedule#}
+{#      </a>#}
+    </div>
+    <div class="reservation__success__footer row align-center space-between">
+      <div class="reservation__success__left">
+        <span>Let us know if you have any</span>
+        <a id="booking-confirmation-special-instructions" href="#">requests/special instructions</a>
+      </div>
+      <div class="reservation__success__right">
+        <a id="booking-confirmation-done" href="#">Done</a>
+      </div>
+    </div>
+  </div>
+  <div id="advance-pay">
+    <div class="advance-pay--block">
+      <div class="advance-pay--title">
+        Advance Pay
+        <a href="#" role="button" id="advance-pay-close">
+          <img src="{{ base_path ~ directory }}/assets/images/close.svg" alt="">
+        </a>
+      </div>
+      <div class="advance-pay--input input-group">
+        <label for="advance-amount">Advance amount</label>
+        <input type="text" name="advance-amount" id="advance-amount">
+      </div>
+      <input type="submit" id="booking-confirmed-pay-advance-amount" value="Proceed to payment">
+    </div>
+  </div>
+  <div id="special-request">
+    <div class="request-block">
+      <div class="request-title">
+        Requests/special instructions
+        <a href="#" role="button" id="request-close">
+          <img src="{{ base_path ~ directory }}/assets/images/close.svg" alt="">
+        </a>
+      </div>
+      <div class="request-input">
+        <div class="input-group">
+          <label for="occasion">Celebrating for</label>
+          <div class="radio--custom" id="occasion-list"></div>
+        </div>
+        <div class="input-group">
+          <label for="occasion">Joined by</label>
+          <div class="radio--custom" id="joined-by-list"></div>
+        </div>
+        <div class="input-group">
+          <label for="description">Special information</label>
+          <input type="text" name="description" id="booking-special-instructions">
+        </div>
+      </div>
+      <div class="request-cta">
+        <a id="update-special-instructions" href="#">Done</a>
+      </div>
+    </div>
+  </div>
+  <div id="reservation__cancellation">
+    <div class="reservation__heading">
+      <h3 class="title">Cancellation</h3>
+      <a href="#" role="button" class="reservation__heading-action">Cancel</a>
+    </div>
+    <div class="reservation__cancellation__card">
+      <div class="reservation__cancellation__title">We are sorry to see you cancel</div>
+      <div class="reservation__cancellation__schedule">Tuesday, 01 Sep, 01:00PM, @Indiranagar</div>
+      <div class="reservation__cancellation__reschedule row align-center space-between">
+        <div class="reservation__cancellation__reschedule__text">Would you like to reschedule instead?</div>
+        <div class="reservation__cancellation__reschedule__cta">
+          <a href="#" role="button" id="profile-booking-cancellation-reschedule-button">Reschedule</a>
+        </div>
+      </div>
+    </div>
+    <div class="reservation__cancellation__reasons" id="profile-cancellation-reason-block">
+      <p>What is the biggest reason for you to cancel?</p>
+      <ul class="radio__custom__buttons" id="profile-cancellation-reason-list"></ul>
+    </div>
+    <div class="reservation__cancellation__refund" style="display: none">
+      <input type="hidden" id="profile-cancellation-booking-id">
+      <p>Mode of Refund</p>
+      <div class="radio__custom__buttons">
+        <div class="refund__card row align-center space-between" id="profile-cancellation-refund-loyalty-block">
+          <div class="refund__card__input row">
+            <input type="radio" name="refund" id="profile-cancellation-refund-loyalty-input">
+            <label for="profile-cancellation-refund-loyalty-input">BBQN Smiles</label>
+            <span id="profile-booking-cancellation-loyalty-deduction"></span>
+            <span>*Redeem in next visit</span>
+          </div>
+          <div class="refund__card__amount" id="profile-cancellation-refund-loyalty-value"></div>
+        </div>
+        <div class="refund__card row align-center space-between" id="profile-cancellation-refund-amount-block">
+          <div class="refund__card__input row">
+            <input type="radio" name="refund" id="profile-cancellation-refund-amount-input">
+            <label for="profile-cancellation-refund-amount-input">Original Mode of Payment</label>
+            <span id="profile-booking-cancellation-amount-deduction"></span>
+          </div>
+          <div class="refund__card__amount" id="profile-cancellation-refund-amount-value"></div>
+        </div>
+      </div>
+    </div>
+    <input type="submit" value="Cancel Reservation" id="profile-cancellation-submit">
+  </div>
+</div>
+{% include "@bbq_nation/partials/components/includes/reservation_share.html.twig" %}

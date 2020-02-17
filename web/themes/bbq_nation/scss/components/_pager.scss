@@ -1,0 +1,12 @@
+.pager {
+  text-align: center;
+}
+
+.button--loadmore {
+  padding: 5px 10px 5px 30px;
+  text-transform: none;
+  color: $color--black !important; // Override default button behavior.
+  border-radius: 20px;
+  background: url("../assets/images/refresh.svg") no-repeat 12px center !important; // Override default button behavior.
+  background-size: 20px;
+}

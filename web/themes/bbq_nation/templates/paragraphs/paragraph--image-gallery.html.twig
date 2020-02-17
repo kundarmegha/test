@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the image gallery paragraph.
+#}
+
+{% extends "paragraph.html.twig" %}
+{% block content %}
+  {{ attach_library('bbq_nation/slick') }}
+  <div class="paragraph__gallery">
+    {% if content.field_title|render|striptags %}
+      <div class="paragraph__title-xxxl">
+        {{ content.field_title }}
+      </div>
+    {% endif %}
+    <div class="paragraph__gallery-block">
+      <div class="layout-container">
+        <div class="paragraph__gallery-slider">
+            {{ content.field_gallery_images }}
+        </div>
+        <div class="paragraph__gallery-nav">
+            {{ content.field_gallery_images }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

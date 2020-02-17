@@ -1,0 +1,228 @@
+// Card Layout syles
+
+.reservation {
+  &__card {
+    &--single {
+      box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      min-height: 380px;
+      position: relative;
+      margin-bottom: 30px;
+
+      @include bp-xs-small() {
+        margin-bottom: 20px;
+      }
+
+    }
+
+    &--thumbnail {
+      height: 135px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.7));
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--details {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      color: $color--white;
+      padding: 20px;
+      height: 100%;
+
+      .reservation-location,
+      .reservation-date {
+        p {
+          font: $font-size--s $font-family--primary;
+          font-weight: $font-weight--medium;
+          margin-bottom: 10px;
+        }
+      }
+
+      .reservation-date {
+        display: flex;
+        flex-direction: row;
+
+        img {
+          width: 15px;
+          height: 15px;
+          object-fit: cover;
+          margin-right: 5px;
+        }
+      }
+
+      .reservation-contact {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: absolute;
+        width: 100%;
+        bottom: 15px;
+        left: 0;
+        @include bp-large(){
+          justify-content: space-evenly;
+          padding: 0;
+        }
+
+        img {
+          width: 20px;
+          height: 20px;
+          object-fit: cover;
+          margin-right: 5px;
+        }
+
+        .branch-direction,
+        .branch-contact,
+        .branch-share {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          font: $font-size--xxs $font-family--primary;
+          font-weight: $font-weight--medium;
+
+          a {
+            display: flex;
+            flex-direction: row;
+          }
+
+          p {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    &--content {
+      padding: 10px 20px;
+
+      .ref-key {
+        font: $font-size--xxs $font-family--primary;
+        font-weight: $font-weight--medium;
+        color: $color--grey;
+
+        span {
+          color: $color--title;
+        }
+      }
+
+      .menu-order {
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        p {
+          font: $font-size--s $font-family--primary;
+          font-weight: $font-weight--bold;
+          color: $color--tertiary;
+          margin-bottom: 5px;
+          letter-spacing: 0.14px;
+          span {
+            color: $color--primary;
+          }
+        }
+      }
+
+      .bbq-points {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 30px;
+        font: $font-size--xs $font-family--primary;
+        font-weight: $font-weight--bold;
+        color: $color--tertiary;
+        margin-bottom: 5px;
+
+        span {
+          &:last-child {
+            color: $color--primary;
+          }
+        }
+      }
+
+      .total-cost {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font: $font-size--xs $font-family--primary;
+        font-weight: $font-weight--bold;
+        color: $color--tertiary;
+        margin-bottom: 5px;
+        .paid {
+          font-size: 12px;
+          &:after {
+            content: '\e925';
+            font-family: 'icomoon';
+            color: $color--dodger-blue;
+            font-size: 14px;
+            padding-left: 5px;
+            vertical-align: middle;
+          }
+        }
+      }
+
+      .card-action {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: absolute;
+        justify-content: space-between;
+        padding: 0 20px;
+        bottom: 20px;
+        width: 100%;
+        left: 0;
+        align-items: center;
+        @include bp-large(){
+          justify-content: space-evenly;
+          padding: 0;
+        }
+
+
+        a {
+          font: $font-size--xxs $font-family--primary;
+          font-weight: $font-weight--semibold;
+          color: $color--tawny-brown;
+          padding-left: 0;
+          @include bp-large(){
+            padding-left: 20px;
+          }
+          &:first-child {
+            margin-right: 20px;
+            &:before {
+              content: '\e922';
+              font-family: 'icomoon';
+              color: $color--tawny-brown;
+              font-size: 16px;
+              vertical-align: middle;
+              padding-right: 5px;
+            }
+          }
+          &:before {
+            content: '\e924';
+            font-family: 'icomoon';
+            color: $color--tawny-brown;
+            font-size: 16px;
+            vertical-align: middle;
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .past-reservation {
+  }
+}

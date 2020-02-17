@@ -1,0 +1,542 @@
+.hero-promotional-content {
+  @include bp-xs-small() {
+    width: 100%;
+  }
+  @include bp-small() {
+    width: 100%;
+  }
+  @include bp-medium() {
+    width: unset;
+  }
+  @include bp-large() {
+    width: unset;
+  }
+
+  .slick-slide {
+    @include bp-medium() {
+      width: 616px !important;
+    }
+    @include bp-large() {
+      width: 806px !important;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  height: 490px;
+  margin-right: 30px;
+  max-width: 810px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.05);
+
+  @include bp-xs-small() {
+    height: 180px;
+    max-width: none;
+  }
+
+  @include bp-small() {
+    margin: 0 30px 0 0;
+    max-width: none;
+  }
+
+  @include bp-medium() {
+    height: 490px;
+    margin: 0 30px 0 0;
+    max-width: 600px;
+  }
+
+  @include bp-large() {
+    max-width: 810px;
+    height: 490px;
+    margin: 0 30px 0 0;
+  }
+
+  &-carousel {
+    margin: 0 30px 0 0 !important;
+    padding: 0 20px;
+    max-width: 810px;
+    width: 100%;
+
+    @include bp-small() {
+      max-width: 100%;
+      padding: 0 10px;
+      margin: 0 10px 0 0 !important;
+    }
+
+
+    @include bp-medium() {
+      max-width: 600px;
+      height: auto;
+      margin: 0 30px 0 0;
+    }
+
+    @include bp-large() {
+      margin: 0 30px 0 0 !important;
+      padding: 0 20px;
+      max-width: 810px;
+    }
+
+    .slick-dots {
+      bottom: -40px !important;
+      justify-content: flex-start !important;
+      padding-left: 40px;
+
+      @include bp-xs-small() {
+        bottom: -20px !important;
+        padding-left: 0;
+      }
+    }
+  }
+
+  &--variant {
+    &--default {
+      .card {
+        &-details {
+          position: absolute;
+          top: 40%;
+          right: 0;
+          left: 0;
+          text-align: center;
+
+          .card-title {
+            color: $color--white;
+            font-weight: $font-weight--semibold;
+
+            @include bp-xs-small() {
+              font-size: 24px;
+            }
+
+            @include bp-small() {
+              font-size: 24px;
+            }
+
+            @include bp-medium() {
+              font-size: 24px;
+            }
+
+            @include bp-large() {
+              font-size: 28px;
+            }
+          }
+        }
+      }
+
+      .card-image {
+        position: unset;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    &-sidebar {
+      .card {
+        &-details {
+          position: relative;
+          z-index: 1;
+          height: 100%;
+          color: #ffffff;
+          width: 45%;
+          padding: 50px;
+          font-size: 28px;
+
+          @include bp-xs-small() {
+            font-size: 12px;
+            padding: 10px;
+            width: 50%;
+          }
+
+          @include bp-small() {
+            padding: 30px;
+            padding-left: 30px;
+            width: 50%;
+          }
+
+          @include bp-medium() {
+            font-size: 14px;
+            padding: 30px;
+            padding-left: 30px;
+            width: 45%;
+          }
+
+          @include bp-large() {
+            font-size: 28px;
+            padding: 50px;
+          }
+        }
+
+        &-title {
+          font-weight: 600;
+
+          @include bp-xs-small() {
+            margin-bottom: 30px;
+          }
+
+          @include bp-small() {
+            font-size: 20px;
+          }
+
+          @include bp-medium() {
+            font-size: 24px;
+          }
+
+          @include bp-large() {
+            font-size: 28px;
+          }
+        }
+
+        &-price {
+          font-weight: 700;
+          margin: 30px 0 80px;
+          display: flex;
+          align-items: flex-start;
+          line-height: normal;
+          position: relative;
+          font-size: 36px;
+
+          @include bp-xs-small() {
+            font-size: 18px;
+            margin: 15px 0 10px;
+          }
+
+          @include bp-small() {
+            margin: 30px 0 30px;
+            font-size: 20px;
+          }
+
+          @include bp-medium() {
+            font-size: 24px;
+            margin: 30px 0 30px;
+          }
+
+          @include bp-large() {
+            font-size: 36px;
+          }
+
+          span {
+            font-size: 26px;
+            position: absolute;
+            left: 0;
+            top: 5px;
+
+            @include bp-xs-small() {
+              font-size: 14px;
+              top: 2px;
+            }
+
+            @include bp-small() {
+              font-size: 14px;
+              top: 2px;
+            }
+
+            @include bp-medium() {
+              font-size: 22px;
+              top: 2px;
+            }
+
+            @include bp-large() {
+              font-size: 26px;
+              top: 5px;
+            }
+          }
+        }
+
+        &-cta {
+          position: absolute;
+          bottom: 80px;
+
+          @include bp-xs-small() {
+            bottom: 0;
+            position: relative;
+          }
+
+          @include bp-small() {
+            position: absolute;
+            bottom: 170px;
+          }
+
+          @include bp-medium() {
+            position: absolute;
+          }
+
+          @include bp-large() {
+            bottom: 80px;
+            position: absolute;
+          }
+        }
+
+        &-offer {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          z-index: 1;
+          height: 120px;
+          width: 120px;
+          text-align: center;
+          color: #fff;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 20px;
+          line-height: normal;
+          font-size: 18px;
+          text-transform: uppercase;
+
+          @include bp-xs-small() {
+            height: 60px;
+            width: 60px;
+            font-size: 8px;
+          }
+
+          @include bp-small() {
+            height: 80px;
+            width: 80px;
+            font-size: 10px;
+          }
+
+          @include bp-medium() {
+            height: 80px;
+            width: 80px;
+            font-size: 10px;
+          }
+
+          @include bp-large() {
+            height: 120px;
+            width: 120px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    &-gradient {
+      .card {
+        &-details {
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          bottom: 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          padding: 50px;
+          font-size: 32px;
+
+          .card-details--left {
+            max-width: 50%;
+          }
+
+          @include bp-xs-small() {
+            font-size: 14px;
+            padding: 30px;
+          }
+          @include bp-small() {
+            padding: 30px;
+            font-size: 20px;
+          }
+          @include bp-medium() {
+            padding: 30px;
+            font-size: 24px;
+          }
+        }
+
+        &-price {
+          font-weight: 700;
+          color: $color--white;
+          font-size: 36px;
+
+          @include bp-xs-small() {
+            font-size: 18px;
+          }
+        }
+
+        &-title {
+          font-weight: 500;
+          color: $color--white;
+          font-size: 28px;
+
+          @include bp-xs-small() {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &--subvar {
+    &-orange {
+      .card {
+        &-details {
+          background: url("../assets/images/Group 2743.svg") no-repeat;
+          background-size: cover;
+          background-position: top right;
+        }
+
+        &-offer {
+          background: url("../assets/images/Group 403.svg") no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+
+        &-cta {
+          color: #e16928;
+        }
+      }
+    }
+
+    &-blue {
+      .card {
+        &-details {
+          background: url("../assets/images/Group 2744.svg") no-repeat;
+          background-size: cover;
+          background-position: top right;
+        }
+
+        &-offer {
+          background: url("../assets/images/Group -1.svg") no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+
+        &-cta {
+          color: #6498a5;
+        }
+      }
+    }
+
+    &-white {
+      .card {
+        &-image {
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: -webkit-gradient(linear,100% 0%,0% 100%,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.8)));
+          }
+        }
+
+        &-cta {
+          a {
+            background: #FF6301;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+
+    &-black {
+      .card {
+        &-details {
+          color: #ffffff;
+        }
+
+        &-image {
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+            background: -webkit-linear-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+            background: -moz-linear-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+            background: -ms-linear-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+            background: -o-linear-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+          }
+        }
+
+        &-cta {
+          a {
+            background: #FF6301;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  &-cta {
+    display: inline-flex;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @include bp-xs-small() {
+      font-size: 10px;
+    }
+
+    @include bp-medium() {
+      font-size: 14px;
+    }
+
+    a {
+      padding: 14px 25px;
+      background: #ffffff;
+      border-radius: 30px;
+
+      @include bp-xs-small() {
+        padding: 6px 10px;
+      }
+
+      @include bp-small() {
+        padding: 6px 15px;
+        font-size: 12px;
+      }
+
+      @include bp-medium() {
+        padding: 6px 15px;
+        font-size: 12px;
+      }
+
+      @include bp-large() {
+        padding: 14px 25px;
+      }
+
+    }
+  }
+
+
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      @include bp-xs-small() {
+        object-fit: unset !important;
+      }
+
+      @include bp-small() {
+        object-fit: unset !important;
+      }
+
+      @include bp-medium() {
+        object-fit: unset !important;
+      }
+
+      @include bp-large() {
+        object-fit: unset !important;
+      }
+    }
+  }
+}

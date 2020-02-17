@@ -1,0 +1,14 @@
+.close {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+
+  &::after {
+    content: "\e90d";
+    font-family: icomoon;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,105 @@
+header {
+  @include bp-xs-small() {
+    display: flex;
+    align-items: center;
+    height: 70px;
+  }
+
+  @include bp-small() {
+    display: flex;
+    align-items: center;
+    height: 70px;
+  }
+
+  @include bp-large() {
+    display: flex;
+    align-items: center;
+    height: 90px;
+  }
+
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  user-select: none;
+  background: $color--white;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+  // padding-bottom: 0.5rem;
+  font-size: $font-size--s;
+  font-weight: $font-weight--medium;
+
+  .layout-container {
+    position: relative;
+  }
+
+  .navbar__collapse__item {
+    margin-left: auto;
+  }
+
+  .logo {
+    @include bp-xs-small() {
+      width: 50px;
+    }
+
+    @include bp-small() {
+      width: 80px;
+    }
+
+    @include bp-large() {
+      width: auto;
+      margin-right: 50px;
+    }
+
+    width: auto;
+    margin-right: 20px;
+
+    a {
+      display: flex;
+      max-width: 110px;
+      outline: none;
+    }
+  }
+
+  // Menu.twig starts
+
+  ul {
+    li {
+      text-transform: uppercase;
+      font-weight: $font-weight--medium;
+
+      &:first-child {
+        @include bp-xs-small() {
+          margin-right: 10px;
+        }
+
+        @include bp-large() {
+          margin-right: 30px;
+        }
+
+        margin-right: 30px;
+      }
+    }
+  }
+
+  // Menu.twig ends
+}
+
+.header {
+  &-center {
+    @include bp-xs-small() {
+      display: none;
+    }
+
+    @include bp-small() {
+      display: none;
+    }
+
+    @include bp-medium() {
+      display: flex;
+    }
+  }
+  &-left, &-right {
+    position: relative;
+  }
+}

@@ -1,0 +1,8 @@
+global-css:
+  css:
+    theme:
+      css/style.css: {}
+    base:
+        '//fonts.googleapis.com/css?family=Lato' : { external : true }
+  js:
+    js/main.js: {}

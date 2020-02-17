@@ -1,0 +1,72 @@
+/**
+*********************
+* Colors
+********************
+**/
+
+/* Brand Colors */
+
+$color--primary: #fc4412 !default;
+$color--secondary: #c00 !default;
+$color--tertiary: #364044 !default;
+// Additional brand colors
+/** Add any additional color supplied in the style guide **/
+
+/* Grayscale colors */
+$color--white: #fff !default;
+$color--white-smoke: #f5f5f5 !default;
+$color--dark-white-smoke: #f7f2f1 !default;
+$color--whisper: #eee !default;
+$color--light-grey: #ccc !default;
+$color--grey: #6a6a6a !default;
+$color--dark-grey: #484848 !default;
+$color--black: #000 !default;
+$color--gradient-black: transparentize($color--black, 0.4);
+$color--gradient-white: transparentize($color--white, 0.9);
+$color--social-icons: #d9bdb1;
+/* Accent colors. Primarily used for buttons */
+$color--accent: $color--primary !default;
+$color--accent-contrast: $color--white !default;
+$color--selected-text: $color--accent-contrast !default;
+$color--selected-bg: $color--secondary !default;
+
+/** Button & Link colors **/
+$color--link: $color--accent;
+$color--link-hover: darken($color--link, 5%);
+$color--menu-link: $color--black;
+
+/* Third party brand colors */
+$color--facebook: #03539e !default;
+$color--twitter: #35ccff !default;
+$color--linkedin: #217bc1 !default;
+
+/* Brand colors */
+$color--submit-button: #ea5607;
+$color--alice-blue: #fbfcfe;
+$color--title: #02050a;
+$color--feldspar: #d19772;
+$color--seashell: #fcf3ee;
+$color--dodger-blue: #10a3ff;
+$color--tawny-brown: #c64c00;
+$color--karry: #ffdfcc;
+$color--link: #ff6301;
+
+// Generic Colors
+
+$color--teal: #42c75c;
+$color--dark-teal: #6ac259;
+$color--seashell: #fbf4f1;
+$color--chico: #966257;
+$color--profile:#191919;
+$color--profile-link:transparentize($color--profile, 0.5);
+$color--profile-border:#edebef;
+$color--earned:#28B15C;
+$color--table-header:#FCF5F2;
+$color--label:#2E3E42;
+$color--gift-blue:#00A4FF;
+$color--green-vogue: #D8BDB1;
+$color--news-border: #ECF0F5;
+$color-contact-webform-border: #E1E5EB;
+$color--smoke: #8C95A3;
+$color--light-black: #323943;
+$color-content: #595F69;

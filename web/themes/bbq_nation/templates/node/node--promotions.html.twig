@@ -1,0 +1,101 @@
+{% set pageName = 'Promotions' %}
+{% block content %}
+  <div class="layout-container">
+    <div class="promotion--info">
+      <div class="promotion__wrapper">
+        <div class="content__image">
+          <article class="card card--voucher">
+            <div class="card__media">
+              <img src="{{ file_url(content.field_teaser_banner['#items'].entity.uri.value) }}" alt="Promotion">
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="promotion__description">
+        <div class="promotion-data">
+          <div class="promotion-header">
+            {{ label }}
+          </div>
+          {% if content.field_promotion_details|render is not empty %}
+          <div class="promotion-data-description">
+            {{ content.field_promotion_details }}
+          </div>
+          {% endif %}
+
+          {% if content.field_coupon_code|render is not empty or content.field_reserve_a_table_link|render is not empty %}
+          <div class="promotion-coupon-wrapper">
+            {% if content.field_coupon_code|render is not empty %}
+          <div class="promotion-coupon">
+            <div class="promotion-coupon-header">
+              Coupon Code:
+              <div id="promotion-coupon">{% spaceless %}{{ content.field_coupon_code }}{% endspaceless %}</div>
+              <div class="promotion-copy-code">
+                Copy Code
+              </div>
+            </div>
+          </div>
+            {% endif %}
+            {% if content.field_reserve_a_table_link|render is not empty %}
+          <div class="promotion-reserve-table">
+            <a href="{{ content.field_reserve_a_table_link['#items'][0].value|striptags }}"><img src="../../../../../themes/custom/bbq_nation/assets/images/serving-dish.svg">RESERVE TABLE</a>
+          </div>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="overlay-wrapper">
+          <div class="promotion-info overlay-content">
+            <div class="info__header">
+              <h1>More Details About Promotion</h1>
+              <a href="#" class="close"></a>
+            </div>
+            <div class="info__content">
+              {% if content.field_days_along_slot|render %}
+                {% set paragraph_name = content.field_days_along_slot %}
+                <div class="info">
+                  <h3>Timings</h3>
+                  <div>
+                    {% for item in paragraph_name['#items'] %}
+                      {{ drupal_entity('paragraph', item.target_id) }}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+              {% if content.field_applicable_on['#items'][0].value|render is not empty %}
+                <div class="info">
+                  <h3>Applicable on</h3>
+                  <div class="info__valid-date">
+                    {{ content.field_applicable_on['#items'][0].value|striptags }}
+                  </div>
+                </div>
+              {% endif %}
+              {% if content.field_not_valid_on['#items'][0].value|render is not empty %}
+                <div class="info">
+                  <h3>Not valid on</h3>
+                  <div class="info__valid-date">
+                      {{ content.field_not_valid_on['#items'][0].value|striptags }}
+                  </div>
+                </div>
+              {% endif %}
+              {% if content.field_use_this_within['#items'][0].value|render is not empty %}
+                <div class="info">
+                  <h3>Use this within</h3>
+                  <p>{{ content.field_use_this_within['#items'][0].value|striptags }}</p>
+                </div>
+              {% endif %}
+              {% if content.field_terms_and_condition['#items'][0].value|render is not empty %}
+                <div class="info">
+                  <h3>Things to remember</h3>
+                  <p>{{ content.field_terms_and_condition['#items'][0].value|striptags|replace({ "\n": " " })|replace({ "&nbsp;": " " }) }}</p>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        </body>
+      </div>
+    </div>
+  </div>
+{% endblock %}

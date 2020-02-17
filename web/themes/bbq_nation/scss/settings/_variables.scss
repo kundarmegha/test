@@ -1,0 +1,69 @@
+/**
+*********************
+* Variables
+********************
+**/
+
+/**
+  * Font sizes and spacing/widths
+  * -----------------------------------------------------------------------------
+  */
+
+/* Font familys */
+$font-family--primary: "Nunito Sans", sans-serif;
+$font-family--secondary: Georgia, "Times New Roman", Times, serif;
+
+/* Font weight */
+$font-weight--light: 300;
+$font-weight--regular: 400;
+$font-weight--medium: 500;
+$font-weight--semibold: 600;
+$font-weight--bold: 700;
+
+/* Font sizes */
+$font-size--xxxs: 8px;
+$font-size--xxs: 10px;
+$font-size--xs: 12px;
+$font-size--s: 14px;
+$font-size--base: 16px;
+$font-size--l: 18px;
+$font-size--xl: 20px;
+$font-size--xxl: 24px;
+$font-size--xxxl: 30px;
+$font-size--title: 36px;
+
+/* Transitions */
+$transition-time--base: 0.25s;
+
+/* Breakpoints */
+$bp-smaller-than-mobile: "max-width: 40rem" !default;
+$bp-smaller-than-tablet: "max-width: 64rem" !default;
+$bp-smaller-than-desktop: "max-width: 75rem" !default;
+$bp-larger-than-mobile: "min-width: 40rem" !default;
+$bp-larger-than-tablet: "min-width: 64rem" !default;
+$bp-larger-than-desktop: "min-width: 75rem" !default;
+
+/* Spacings and widths */
+$layout--container-max-width: 1248px;
+$grid-columns: 12;
+$grid--gutter: 1rem;
+$spacing--small: 0.5rem;
+$spacing--medium: 1rem;
+$spacing--large: 1.5rem;
+
+/** Button settings **/
+$button--padding-left: 2rem !default;
+$button--padding-right: 2rem !default;
+$button--padding-top: 1rem !default;
+$button--padding-bottom: 1rem !default;
+$button--horizontal-padding: $button--padding-left;
+$button--vertical-padding: $button--padding-top;
+
+/** Menu settings **/
+$menu--link-padding-left: 1rem;
+$menu--link-padding-right: 1rem;
+$menu--link-padding-top: 0.75rem;
+$menu--link-padding-bottom: 0.75rem;
+$menu--link-padding-horizontal: 1rem;
+$menu--link-padding-vertical: 0.75rem;
+$menu--submenu-min-width: 12.5rem;

@@ -1,0 +1,566 @@
+.menu-wrap {
+
+  @include bp-xs-small() {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  @include bp-small() {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  @include bp-medium() {
+    display: none;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $color--white;
+    z-index: 3;
+    visibility: visible;
+    opacity: 1;
+    padding: 10px 0 50px;
+    position: fixed;
+    transition: none;
+  }
+
+  display: none;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: $color--white;
+  z-index: 3;
+  visibility: visible;
+  opacity: 1;
+  padding: 10px 0 50px;
+  position: fixed;
+  // transition: all 0.3s ease-in-out 0s;
+
+
+
+  &.show {
+
+    @include bp-xs-small() {
+      visibility: visible;
+      opacity: 1;
+      // transition: all 0.3s ease-in-out 0s;
+
+      .menu-wrap--container {
+        right: 0;
+        justify-content: flex-start;
+      }
+    }
+
+    @include bp-small() {
+      visibility: visible;
+      opacity: 1;
+      // transition: all 0.3s ease-in-out 0s;
+
+      .menu-wrap--container {
+        right: 0;
+        justify-content: flex-start;
+      }
+    }
+
+    @include bp-medium() {
+      visibility: visible;
+      opacity: 1;
+      // transition: all 0.3s ease-in-out 0s;
+
+      .menu-wrap--container {
+        right: 0;
+        justify-content: flex-start;
+      }
+    }
+
+  }
+
+  .menu-wrap--container {
+
+    @include bp-xs-small() {
+      margin: 0;
+      width: 75vw;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: -75vw;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      background: $color--white;
+      padding: 35px 30px 30px;
+      transition: all 0.5s ease-in-out 0s;
+    }
+
+    @include bp-small() {
+      margin: 0;
+      width: 75vw;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: -75vw;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      background: $color--white;
+      padding: 35px 30px 65px;
+      transition: all 0.5s ease-in-out 0s;
+    }
+
+    @include bp-medium() {
+      margin: 0 30px;
+      overflow: auto;
+      padding: 0;
+      position: relative;
+      right: auto;
+      width: auto;
+      z-index: 1;
+    }
+
+    @include bp-large() {
+      margin: 0 auto;
+      overflow: auto;
+      padding: 0;
+      position: relative;
+      right: auto;
+      width: auto;
+      z-index: 1;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 75rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      @include bp-xs-small() {
+        display: none;
+      }
+
+      @include bp-small() {
+        display: none;
+      }
+
+      @include bp-medium() {
+        display: block;
+      }
+
+      content: "";
+      background: url('../assets/images/Untitled-1-29.svg') no-repeat;
+      background-size: 35%;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.05;
+      z-index: 1;
+
+    }
+  }
+
+  .menu-logo {
+    @include bp-xs-small() {
+      display: none;
+    }
+
+    @include bp-small() {
+      display: none;
+    }
+
+    @include bp-medium() {
+      display: block;
+    }
+  }
+
+  .menu-close {
+    @include bp-xs-small() {
+      position: absolute;
+      top: 27px;
+      right: 23px;
+    }
+
+    @include bp-small() {
+      position: absolute;
+      top: 27px;
+      right: 23px;
+    }
+
+    @include bp-medium() {
+      position: relative;
+      top: auto;
+      right: auto;
+    }
+  }
+
+  .menu-wrap--close {
+    @include bp-xs-small() {
+      height: 16px;
+      width: 16px;
+    }
+
+    @include bp-small() {
+      height: 16px;
+      width: 16px;
+    }
+
+    @include bp-medium() {
+      height: 25px;
+      width: 25px;
+    }
+
+    &::after {
+      content: "\e90d";
+      font-family: icomoon;
+      font-size: 25px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    height: 25px;
+    width: 25px;
+    display: flex;
+  }
+
+  .menu__user {
+    @include bp-xs-small() {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    @include bp-small() {
+      display: flex;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border: none;
+    }
+
+    @include bp-medium() {
+      display: none;
+    }
+
+    width: 100%;
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid $color--profile-border;
+
+    .menu__user-image {
+      height: 75px;
+      width: 75px;
+      margin-right: 15px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    .menu__user-details {
+      .menu__user-name {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .menu__user-points {
+        display: flex;
+
+        span {
+          background: $color--primary;
+          color: $color--white;
+          padding: 6px 15px 6px 15px;
+          border-radius: 20px;
+          font-size: 12px;
+
+          &::before {
+            content: "\e901";
+            font-family: icomoon;
+            font-size: 12px;
+            margin-right: 5px;
+            font-weight: 800;
+            cursor: pointer;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .menu-wrap--header {
+    @include bp-xs-small() {
+      display: block;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $color--profile-border;
+    }
+    @include bp-small() {
+      display: block;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $color--profile-border;
+    }
+    @include bp-small() {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+      z-index: 2;
+    width: 100%;
+
+    .user-nav__button {
+      @include bp-xs-small() {
+        display: block;
+      }
+      @include bp-small() {
+        display: block;
+      }
+      @include bp-medium() {
+        display: none;
+      }
+    }
+  }
+
+  .menu-wrap--list {
+    @include bp-xs-small() {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    @include bp-small() {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    @include bp-medium() {
+      max-width: 60rem;
+      width: 60rem;
+    }
+
+    max-width: 60rem;
+    margin: 0 auto;
+    width: 60rem;
+    z-index: 2;
+
+    ul {
+      &.main-nav {
+        @include bp-xs-small() {
+          column-count: auto;
+          padding-bottom: 30px;
+        }
+
+        @include bp-small() {
+          column-count: auto;
+          padding-bottom: 30px;
+        }
+
+        @include bp-medium() {
+          column-count: 3;
+          padding-bottom: 0;
+          margin-bottom: 0;
+          border-bottom: none;
+        }
+
+        column-count: 3;
+
+        li {
+          @include bp-xs-small() {
+            font-size: 16px;
+            margin: 15px 0;
+            font-weight: 400;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          @include bp-small() {
+            font-size: 16px;
+            margin: 15px 0;
+            font-weight: 400;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          @include bp-medium() {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 30px 0;
+
+            &:last-child {
+              margin-bottom: 30px;
+            }
+          }
+
+          font-size: 2rem;
+          font-weight: 600;
+          margin: 30px 0;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          a {
+            transition: color 0.3s ease-in-out 0s;
+            text-transform: none;
+
+            &:hover {
+              color: $color--link;
+            }
+
+          &.active {
+              color: $color--link;
+              position: relative;
+
+              &::after {
+                content: "";
+                height: 1px;
+                width: 100%;
+                left: 0;
+                bottom: -3px;
+                background: $color--link;
+                position: absolute;
+              }
+          }
+        }
+        }
+      }
+
+      &.profile-nav {
+
+        a {
+          text-transform: none;
+        }
+        @include bp-xs-small() {
+          display: block;
+        }
+
+        @include bp-small() {
+          display: block;
+        }
+
+        @include bp-medium() {
+          display: none;
+        }
+
+        padding-bottom: 30px;
+        padding-top: 30px;
+        border-bottom: 1px solid $color--profile-border;
+        border-top: 1px solid $color--profile-border;
+
+        li {
+          font-size: 16px;
+          margin: 15px 0;
+          font-weight: 400;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    a {
+      &.logout {
+        display: inline-block;
+        margin-top: 30px;
+        @include bp-medium() {
+          display: none;
+        }
+
+        font-size: 16px;
+      }
+    }
+  }
+
+  .menu-wrap--footer {
+    @include bp-xs-small() {
+      display: none;
+    }
+
+    @include bp-small() {
+      display: none;
+    }
+
+    @include bp-medium() {
+      display: block;
+    }
+
+    z-index: 2;
+
+    li {
+      margin: 0 10px;
+    }
+
+    .facebook-link {
+      &::after {
+        content: "\e90f";
+        font-family: icomoon;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: 30px;
+      }
+    }
+
+    .twitter-link {
+      &::after {
+        content: "\e913";
+        font-family: icomoon;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: 30px;
+      }
+    }
+
+    .instagram-link {
+      &::after {
+        content: "\e911";
+        font-family: icomoon;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: 30px;
+      }
+    }
+
+    .youtube-link {
+      &::after {
+        content: "\e910";
+        font-family: icomoon;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: 30px;
+      }
+    }
+
+    a {
+      color: #d19772;
+      font-weight: 600;
+      text-transform: none;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+}

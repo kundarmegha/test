@@ -1,0 +1,68 @@
+.talkToUs {
+  position: fixed;
+  transform: rotate(-90deg);
+  bottom: 75px;
+  right: -40px;
+  z-index: 1;
+
+  @include bp-xs-small() {
+    right: 4px;
+  }
+
+  @include bp-medium() {
+    right: -40px;
+  }
+
+  button {
+    margin: 0;
+    height: 30px;
+    padding: 0 10px;
+    width: 110px;
+    background: #D19772;
+    border-radius: 4px 4px 0 0px;
+    font-size: 9px;
+    letter-spacing: 1px;
+
+    @include bp-xs-small() {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include bp-medium() {
+      height: 30px;
+      width: 110px;
+    }
+
+    p {
+      @include bp-xs-small() {
+        display: none;
+      }
+
+      @include bp-medium() {
+        display: block;
+      }
+    }
+  }
+
+  &--icon {
+    background: url('../../assets/images/chat.svg') no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 15px;
+    width: 15px;
+    transform: rotate(90deg);
+
+    @include bp-xs-small() {
+      height: 20px;
+      width: 20px;
+    }
+
+    @include bp-medium() {
+      height: 15px;
+      width: 15px;
+    }
+  }
+}

@@ -1,0 +1,165 @@
+.nearbyOutlets {
+  &--card {
+    @include bp-xs-small() {
+      width: 260px;
+      margin: 0 10px 30px;
+    }
+    @include bp-small() {
+      margin: 0 10px 70px;
+    }
+    @include bp-medium() {
+      width: auto;
+      margin: 0 10px 20px;
+    }
+    position: relative;
+    overflow: hidden;
+    height: 370px;
+    margin: 0 10px;
+    text-align: center;
+    border-radius: 10px;
+    &:hover {
+      .nearbyOutlets {
+        &--card {
+          &-details {
+            height: 100%;
+            transform: translateY(0);
+            background: rgba(170, 56, 14, 0.85);
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b05e39), to(rgba(170, 56, 14, 0.85)));
+            // background: -webkit-linear-gradient(linear, 0% 0%, 0% 100%, from(#b05e39), to(rgba(170, 56, 14, 0.85)));
+            // background: -moz-linear-gradient(linear, 0% 0%, 0% 100%, from(#b05e39), to(rgba(170, 56, 14, 0.85)));
+            // background: -ms-linear-gradient(linear, 0% 0%, 0% 100%, from(#b05e39), to(rgba(170, 56, 14, 0.85)));
+            // background: -o-linear-gradient(linear, 0% 0%, 0% 100%, from(#b05e39), to(rgba(170, 56, 14, 0.85)));
+
+            &--address {
+              margin-bottom: 30px;
+            }
+            &--link {
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+    }
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: -webkit-gradient(linear, 100% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+      // background: -webkit-linear-gradient(linear, 100% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+      // background: -moz-linear-gradient(linear, 100% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+      // background: -ms-linear-gradient(linear, 100% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+      // background: -o-linear-gradient(linear, 100% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+    }
+    &-details {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      transition: transform 0.3s ease-in-out 0s;
+      transform: translateY(70%);
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 500;
+      &--location {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+      &--address {
+        margin-bottom: 150px;
+        opacity: 0.75;
+        font-size: 12px;
+        font-weight: 400;
+        padding-left: 10px;
+        padding-right: 10px;
+        min-height: 56px;
+      }
+      &--options {
+        margin-bottom: 28px;
+        ul {
+          li {
+            margin: 0 10px;
+            max-width: 36px;
+            a {
+              display: flex;
+              flex-flow: column;
+              justify-content: flex-start;
+              align-items: center;
+              margin: 0 auto;
+              transition: opacity 0.3s ease-in-out 0s;
+              opacity: 0.4;
+              &:hover {
+                opacity: 1;
+              }
+              img {
+                width: 35px;
+                margin-bottom: 8px;
+              }
+            }
+          }
+        }
+      }
+      &--link {
+        margin-bottom: 50px;
+      }
+      &--cta {
+        display: inline-flex;
+        a {
+          padding: 10px 16px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: #ff6301;
+          border-radius: 20px;
+          background: #fff;
+          font-size: 11px;
+        }
+      }
+    }
+    &-image {
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: unset;
+      }
+    }
+  }
+}
+.l-result__view {
+  .nearbyOutlets--card {
+    width: 100%;
+    margin: 0 0 30px;
+    @include bp-large() {
+      width: auto;
+      margin: 0 10px 20px;
+    }
+    @include bp-medium() {
+      width: auto;
+      margin: 0 10px 20px;
+    }
+    @include bp-small() {
+      width: auto;
+      margin: 0 10px 20px;
+    }
+
+  }
+}
+
+.nearbyOutlets-carousel-content {
+  background-image: url('../assets/images/nearby-outlet-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#restaurants-listing {
+  .nearbyOutlets--card-image {
+    img {
+      object-fit: cover;
+    }
+  }
+}

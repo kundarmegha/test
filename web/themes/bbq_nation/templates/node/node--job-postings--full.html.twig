@@ -1,0 +1,27 @@
+<div class="layout-container">
+  <div class="career--detailed">
+    <div class="career-header">
+    <h3 class="career--detailed-title">
+      {{ label }}
+    </h3>
+    <div class="cta__link">
+      <a class="job__apply" href="#webform-job-posting" id="apply-job-posting"> Apply Now </a>
+    </div>
+    </div>
+    <div class="career--detailed-data">
+      <div class="career--detailed-location">
+        {{ content.field_job_location }}
+      </div>
+    </div>
+    <div class="career--detailed-content space-between">
+      <div class="career--detailed-left-content">
+        <div class="career--detailed-description">
+          {{ content.field_job_description }}
+        </div>
+      </div>
+    </div>
+    <div id="webform-job-posting">
+    {{ drupal_entity('webform', 'current_job_opening_form') }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.faq {
+  .accordion-panel {
+    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 0;
+    padding: 35px 0;
+    border-radius: 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+    .accordion-header {
+      font-size: $font-size--l;
+      font-weight: $font-weight--regular;
+      padding: 0 40px 0 0 !important;
+
+      &::after {
+        right: 0 !important;
+        top: 12px !important;
+      }
+    }
+    .accordion-body {
+      padding: 0 !important;
+      font-size: 14px !important;
+    }
+  }
+
+  .button {
+    padding: 5px 10px 5px 30px;
+    margin: 0 !important;
+    text-transform: none;
+    color: #000 !important;
+    border-radius: 20px;
+    background: url(/themes/custom/bbq_nation/css/../assets/images/refresh.svg) no-repeat 12px center !important;
+    background-size: 20px;
+    border: 1px solid #fc4412;
+    margin-bottom: 0;
+  }
+}

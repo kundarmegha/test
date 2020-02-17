@@ -1,0 +1,41 @@
+<div {{ attributes }}>
+  {% block content %}
+    {% if content.field_promotion_media|render is not empty %}
+      {% if (content.field_promotion_media[0]['#media'].field_media_video_file) is not empty %}
+        {% set video_url = content.field_promotion_media[0]['#media'].field_media_video_file.entity.uri.value %}
+      {% elseif (content.field_promotion_media[0]['#media'].field_media_image) is not empty %}
+        {% set background_url = file_url(content.field_promotion_media[0]['#media'].field_media_image.entity.uri.value) %}
+      {% endif %}
+
+    {% endif %}
+    {{ attach_library('bbq_nation/promotions') }}
+    <div class="banner-block row align-center" style='background: url({{ background_url }}) no-repeat center;'>
+      <div class="layout-container">
+        <div class="banner-content row align-center space-between">
+
+          <div class="hero-promotional-content" id="homepage-hero-promotions">
+            <div class="card-carousel">
+              <div class="banner-text">
+                <h2>
+                  Let us serve you better
+                </h2>
+              </div>
+            </div>
+         </div>
+          {% include "@bbq_nation/partials/components/includes/booking-form.html.twig" %}
+        </div>
+      </div>
+        {% if video_url is not empty %}
+          <div class="banner-media">
+            {# <img alt="" src="/{{ directory }}/assets/images/Background.png"> #}
+            <video autoplay muted loop id="banner-video">
+              <source src="{{ file_url(video_url) }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        {% endif %}
+    </div>
+  {% endblock %}
+</div>
+
+

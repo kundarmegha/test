@@ -1,0 +1,101 @@
+/**
+* Navbar styling.
+**/
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  .navbar__toggler {
+    @include bp-large() {
+      display: none;
+    }
+    position: relative;
+    display: block;
+    width: 3.25rem;
+    height: 3.25rem;
+    margin-left: auto;
+    cursor: pointer;
+    color: $color--dark-grey;
+    background: $color--white-smoke;
+    span {
+      @include transition($transition-time--base all ease-in-out);
+      @include translate(-50%, 0);
+      position: absolute;
+      left: 50%;
+      display: block;
+      width: 1.25rem;
+      height: 1px;
+      transform-origin: center;
+      background-color: $color--dark-grey;
+      &:nth-child(1) {
+        top: calc(50% - 0.5rem);
+      }
+      &:nth-child(2) {
+        top: calc(50% - 1px);
+      }
+      &:nth-child(3) {
+        top: calc(50% + 6px);
+      }
+    }
+    &.is-open {
+      span {
+        &:nth-child(1) {
+          @include transform(translate(-50%, 9px) rotate(45deg));
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          @include transform(translate(-50%, -5px) rotate(-45deg));
+        }
+      }
+    }
+  }
+  .navbar__branding {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1rem;
+    white-space: nowrap;
+    line-height: inherit;
+    .navbar__branding__logo {
+      margin-right: 1rem;
+    }
+    .navbar__branding__name {
+      font-family: $font-family--secondary;
+      font-size: 2rem;
+    }
+    .navbar__branding__slogan {
+      color: $color--grey;
+      font-size: $font-size--s;
+    }
+  }
+  .navbar__collapse {
+    @include bp-medium() {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      width: auto;
+      margin: 0;
+    }
+    display: none;
+    &.is-open {
+      display: block;
+      width: 100%;
+      margin: 1rem 0;
+    }
+    .navbar__collapse__item {
+      @include bp-medium() {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

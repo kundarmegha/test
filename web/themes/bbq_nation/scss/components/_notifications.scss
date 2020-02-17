@@ -1,0 +1,116 @@
+.notifications {
+  &::after {
+    content: "\e91a";
+    font-family: icomoon;
+    font-size: 20px;
+    position: absolute;
+    font-weight: 500;
+    cursor: pointer;
+    top: -5px;
+    z-index: -1;
+  }
+
+  @include bp-xs-small() {
+    display: none;
+  }
+
+  @include bp-small() {
+    display: none;
+  }
+
+  @include bp-medium() {
+    display: block;
+    margin-right: 35px;
+  }
+
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 35px;
+  cursor: pointer;
+
+  &-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 18px;
+    height: 17px;
+    color: #fff;
+    border-radius: 50%;
+    background: #fc4412;
+    font-size: 9px;
+  }
+
+  &-snackbar {
+    position: absolute;
+    top: calc(100% + 20px);
+    background: #fff;
+    width: 360px;
+    height: 410px;
+    overflow-y: scroll;
+    right: 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    display: none;
+    opacity: unset !important;
+    @include bp-xs-small(){
+      width: 300px;
+      height: 410px;
+    }
+
+    >div {
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .notifications-close {
+      padding: 0;
+      background: transparent;
+      position: absolute;
+      top: 2px;
+      right: 0;
+      color: #000;
+      opacity: 0.5;
+      height: 25px;
+      width: 25px;
+      display: flex;
+      &::after {
+        content: "\e90d";
+        font-family: icomoon;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+
+    .notification-item {
+      padding-bottom: 10px;
+    }
+
+    .notifications-image {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .notifications-content {
+      margin-left: 15px;
+      width: calc(100% - 50px - 15px);
+    }
+
+    .notifications-title {
+      font-weight: 600;
+    }
+
+    .notifications-text {
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  }
+}
+
+.notifications-snackbar-active {
+  display: block !important;
+}

@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Button
+   ========================================================================== */
+/**/
+
+button,
+.button {
+  @include transition($transition-time--base all ease-in-out);
+  position: relative;
+  display: inline-block;
+  margin: 0 0 2rem;
+  padding: $button--vertical-padding $button--horizontal-padding;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $color--accent-contrast;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background-color: #ff6301;
+  font-size: 0.75rem;
+  font-weight: $font-weight--medium;
+  &:hover {
+    color: $color--accent-contrast;
+    background-color: darken($color--accent, 5%);
+  }
+  &.button--rounded {
+    border-radius: 1.5rem;
+  }
+  &.button--outline {
+    color: $color--accent;
+    border: 1px solid $color--accent;
+    background: $color--white;
+    &:hover {
+      color: darken($color--accent, 5%);
+      border-color: darken($color--accent, 5%);
+    }
+  }
+  &.button--text {
+    text-decoration: underline;
+    text-transform: capitalize;
+    color: $color--dark-grey;
+    border: none;
+    background: transparent;
+    outline: none;
+    &:hover {
+      background: none;
+    }
+  }
+  &.button--small {
+    padding: $button--vertical-padding - 0.5rem $button--horizontal-padding - 0.5rem;
+  }
+  &.button--big {
+    padding: $button--vertical-padding + 0.5rem $button--horizontal-padding + 0.5rem;
+  }
+}
+.button--atc {
+  margin-bottom: 0;
+  padding: 6px 10px;
+  color: $color--white;
+  border-radius: 20px;
+  background: $color--submit-button;
+  font-size: 11px;
+  font-weight: $font-weight--semibold;
+}
+.button--submit {
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+.button--edit {
+  padding: 0.55rem 1.5rem;
+  color: $color--accent;
+  border: 1px solid $color--accent;
+  border-radius: 50px;
+  background: transparent;
+}

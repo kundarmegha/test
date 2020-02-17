@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the stack card paragraph.
+#}
+
+{% block content %}
+  <div class="paragraph__stack-card  row">
+      <div class="paragraph__stack-card--left row">
+        {% if content.field_image|render is not empty %}
+          <div class="paragraph__stack-card--image">
+            {{ content.field_image }}
+          </div>
+        {% endif %}
+        <div class="paragraph__stack-card--details">
+          {% if content.field_title|render is not empty %}
+            <div class="paragraph__title">
+              {{ content.field_title }}
+            </div>
+          {% endif %}
+          {% if content.field_summary|render is not empty %}
+            <div class="paragraph__content">
+              {{ content.field_summary }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+  </div>
+{% endblock %}

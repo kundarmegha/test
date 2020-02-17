@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the card component paragraph.
+ */
+#}
+
+{% block content %}
+    <div class="paragraph__card-component">
+      <div class="paragraph__card-component--image">
+        {{ content.field_icon }}
+      </div>
+      <div class="paragraph__card-component--details">
+          {{ content.field_title }}
+          {{ content.field_description }}
+        <a href="mailto:{{ content.field_email[0]['#context']['value'] }}">{{ content.field_email[0]['#context']['value'] }}</a>
+      </div>
+  </div>
+{% endblock %}

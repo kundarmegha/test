@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Link.scss settings
+   ========================================================================== */
+/**/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family--primary;
+  font-weight: $font-weight--bold;
+  &.page-title {
+    // include styling for page title.
+  }
+}

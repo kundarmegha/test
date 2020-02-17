@@ -1,0 +1,98 @@
+.banner-block {
+  .banner-text {
+    @include bp-xs-small (){
+      font-size:$font-size--title;
+      font-weight: $font-weight--medium;
+         h2 {
+           max-width: 300px;
+         }
+    }
+    @include bp-small (){
+      font-size: 80px;
+      font-weight: $font-weight--medium;
+    }
+    color: $color--white;
+    font-size: 84px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .banner-slider {
+    position: relative;
+    width: 100%;
+    background: #fff;
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .banner-carousel {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0 !important;
+
+    &::before {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      height: 100%;
+    }
+
+    .slick-dots {
+      z-index: 2;
+      bottom: 40px !important;
+      justify-content: flex-start !important;
+      height: auto;
+      padding: 0 13% !important;
+
+      li.slick-active button::before {
+        background: #fff;
+      }
+    }
+
+    video {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .banner-media {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+
+    video {
+      width: 100%;
+      object-fit: cover;
+
+      @include bp-xs-small() {
+        height: 100%;
+      }
+
+      @include bp-small() {
+        height: 100%;
+      }
+
+      @include bp-medium() {
+        height: 100%;
+      }
+
+      @include bp-large() {
+        height: auto !important;
+      }
+
+    }
+  }
+}

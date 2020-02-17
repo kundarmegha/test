@@ -1,0 +1,72 @@
+// Basic page styling.
+
+.page-404 {
+  padding: 3rem 1rem;
+
+  &::before {
+    content: "";
+    background: url('../assets/images/Untitled-1-29.svg') no-repeat;
+    background-size: 100%;
+    background-position: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.05;
+    z-index: -1;
+
+    @include bp-medium() {
+      background-size: 35%;
+      background-position: center;
+    }
+  }
+
+  @include bp-medium() {
+    padding: 10rem 0;
+  }
+
+  .node__content {
+    margin: auto;
+    max-width: 100%;
+    text-align: center;
+
+    @include bp-medium() {
+      max-width: 520px;
+    }
+  }
+
+  h2 {
+    font-size: $font-size--xl;
+    font-weight: $font-weight--medium;
+    padding-bottom: 10px;
+    @include bp-medium() {
+      font-size: $font-size--title;
+    }
+  }
+
+  .content {
+    color: $color-content;
+    font-size: $font-size--base;
+  }
+
+  a {
+    display: inline-block;
+    margin: 20px 0 0;
+    background: $color--link;
+    font-size: $font-size--s;
+    padding: 10px 20px;
+    color: $color--white;
+    letter-spacing: 1px;
+    border: 1px solid $color--link;
+    font-weight: $font-weight--medium;
+    border-radius: 10px;
+
+    &:hover {
+      background: $color--white;
+      color: $color--link;
+      border: 1px solid $color--link;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+/** Breakpoints **/
+@mixin bp-large {
+  @media only screen and ($bp-larger-than-desktop) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and ($bp-larger-than-tablet) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and ($bp-larger-than-mobile) {
+    @content;
+  }
+}
+
+@mixin bp-xs-small {
+  @media only screen and ($bp-smaller-than-mobile) {
+    @content;
+  }
+}
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: white 0 solid;
+  -webkit-border-radius: 0.15em 0.15em;
+  -moz-border-radius: 0.15em / 0.15em;
+  border-radius: 0.15em / 0.15em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+}
+
+@mixin no-bullet {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+}
+
+@mixin hide-text {
+  display: block;
+  overflow: hidden;
+  text-indent: -9000px;
+}
+
+@mixin border($color, $width, $style) {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: $color $width $style;
+  -webkit-border-radius: 0.15em 0.15em;
+  -moz-border-radius: 0.15em / 0.15em;
+  border-radius: 0.15em / 0.15em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+}
+
+@mixin inset-shadow {
+  -webkit-box-shadow: inset 0 0 85px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 0 85px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 85px rgba(0, 0, 0, 0.5);
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transform: $transforms;
+}
+
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin ($origin) {
+  -webkit-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  transform-origin: $origin;
+
+  moz-transform-origin: $origin;
+}
+
+@mixin opacity($opacity) {
+  $opacity-ie: $opacity * 100;
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin reset {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// List styles
+@mixin unordered {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+@mixin ordered {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+// Html5 inputs
+// -------------------------------------------------------
+/*From seven theme.*/
+
+@mixin input() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 2px;
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  color: #333;
+  border: 1px solid #ccc;
+  border-top-color: #999;
+  background: #fff;
+}
+
+/*From seven theme.*/
+
+@mixin input-focus() {
+  color: #000;
+  border-color: rgba(0, 116, 189, 0.8);
+  outline-color: rgba(0, 116, 189, 0.5);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(220, 220, 220, 0.4);
+}
+
+/*
+* @include triangle within a pseudo element and add positioning properties (ie. top, left)
+* $direction: up, down, left, right
+*/
+
+@mixin triangle($direction, $size: 6px, $color: #222) {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  @if ($direction=="up") {
+    border-right: 1/2*$size solid transparent;
+    border-bottom: $size solid $color;
+    border-left: 1/2*$size solid transparent;
+  }
+  @else if ($direction=="down") {
+    border-top: $size solid $color;
+    border-right: 1/2*$size solid transparent;
+    border-left: 1/2*$size solid transparent;
+  }
+  @else if ($direction=="left") {
+    border-top: 1/2*$size solid transparent;
+    border-right: $size solid $color;
+    border-bottom: 1/2*$size solid transparent;
+  }
+  @else if ($direction=="right") {
+    border-top: 1/2*$size solid transparent;
+    border-bottom: 1/2*$size solid transparent;
+    border-left: $size solid $color;
+  }
+}
+
+// Clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

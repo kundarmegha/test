@@ -1,0 +1,95 @@
+.paragraph--type--cards {
+  flex: 0 0 100%;
+  max-width: 100%;
+  @media ($bp-larger-than-tablet) {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    margin-bottom: 20px;
+  }
+}
+
+  .paragraph__cards {
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.06);
+    padding: 28px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: border 0.3s ease-in-out 0s;
+    @media ($bp-larger-than-tablet) {
+      width: calc(100% - 20px);
+    }
+
+    &:hover {
+      border: 1px solid $color--feldspar;
+    }
+  }
+  .card__title {
+    font-size: $font-size--l;
+    font-weight: $font-weight--medium;
+    margin-bottom: 20px;
+    @include bp-small {
+      font-size: $font-size--xl;
+    }
+  }
+
+  .card__summary {
+    color: $color--label;
+    @include bp-medium {
+      height: 120px;
+    }
+    @media ($bp-larger-than-desktop) {
+      height: 100px;
+      font-weight: 300;
+    }
+  }
+
+.card__object {
+  margin-bottom: 40px;
+  @include bp-medium {
+    margin-right: -20px;
+  }
+
+  .field-card-object {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.view-job-listing {
+  .paragraph__cards {
+    .card__title {
+      line-height: 1;
+      margin-bottom: 0;
+    }
+    .card__tags {
+      margin-bottom: 20px;
+      margin-top: 6px;
+      color: $color--smoke;
+    }
+    .cta__link {
+      margin-top: 20px;
+    }
+    .job__more {
+      color: $color--primary;
+      text-decoration: underline;
+    }
+    .job__apply {
+      padding: 5px 12px;
+      background: $color--primary;
+      color: $color--white;
+      text-transform: uppercase;
+      font-size: $font-size--xs;
+      font-weight: $font-weight--medium;
+      border-radius: 50px;
+      border: 1px solid $color--primary;
+
+      &:hover {
+        background: $color--white;
+        border: 1px solid $color--primary;
+        color: $color--primary;
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+}

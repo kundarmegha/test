@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ * Customizations to theme.
+ */
+
+use Drupal\Core\Path\PathMatcherInterface;
+use Drupal\Core\Site\Settings;
+
+/**
+ * Add preprocess vars.
+ */
+function bbq_nation_preprocess_html(&$variables) {
+  // Add client id & secret to js.
+  $variables['#attached']['drupalSettings']['bbqClientId'] = Settings::get('bbq_client_id');
+  $variables['#attached']['drupalSettings']['bbqClientSecret'] = Settings::get('bbq_client_secret');
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function bbq_nation_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function bbq_nation_preprocess(array &$variables, $hook) {
+  $variables['base_path'] = base_path();
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+  // Ensure the cache varies correctly (new in Drupal 8.3).
+  $variables['#cache']['contexts'][] = 'url.path.is_front';
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function bbq_nation_preprocess_page(&$variables) {
+  $route = \Drupal::routeMatch()->getRouteName();
+  if ($route === 'entity.branch.canonical' || $route === 'entity.node.canonical' || $route = 'user.login') {
+    $variables['#attached']['library'][] = 'better_local_tasks/local-tasks';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function bbq_nation_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  if (isset($variables['view']->element['#view_id'])) {
+    $suggestions[] = 'views_view__' . $variables['view']->element['#view_id'];
+    $suggestions[] = 'views_view__' . $variables['view']->element['#view_id'] . '__' . $variables['view']->current_display;
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function bbq_nation_page_attachments_alter(array &$page) {
+  $viewport = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$viewport, 'viewport'];
+}

@@ -1,0 +1,85 @@
+label {
+  font-size: 12px;
+  color: #364044;
+  font-weight: 500;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.datepicker {
+  font-size: 12px;
+  font-weight: 700;
+  color: #364044;
+
+  #datepicker, .booking-datepicker {
+    height: 28px;
+    border-bottom: 1px solid rgba(252, 68, 18, 0.3);
+    padding: 0 0 0 25px;
+    width: 120px;
+    background: url('../assets/images/calendar (1).svg') no-repeat;
+    background-size: 12px;
+    background-position: left center;
+    cursor: pointer;
+  }
+
+  .select2-selection {
+    padding: 2px 0 8px 25px;
+    width: 120px;
+    background: url('../assets/images/fast.svg') no-repeat;
+    background-position: left center;
+    background-size: 16px;
+  }
+
+  .select2-dropdown {
+    border: none;
+  }
+}
+
+.input {
+  &--group {
+    margin-bottom: 25px;
+
+    &-button {
+      position: absolute;
+    }
+  }
+}
+
+.radio {
+  &--custom {
+    display: flex;
+    flex-wrap: wrap;
+
+    input[type="radio"] {
+      display: none;
+
+      &+label {
+        display: inline-block;
+        background-color: transparent;
+        cursor: pointer;
+        height: 28px;
+        padding: 0 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        border: 1px solid #FFDFCC;
+        opacity: 1;
+        font-weight: 700;
+        margin: 0 10px 0 0;
+        @media screen and (max-width: 375px) {
+          padding: 0 10px;
+          margin: 0 5px 0 0;
+        }
+      }
+
+      &:checked {
+        &+label {
+          background-color: rgba(255, 98, 1, 0.19);
+          // border-color: rgba(255, 98, 1, 0.19);
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}

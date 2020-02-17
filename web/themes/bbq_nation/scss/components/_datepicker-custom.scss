@@ -1,0 +1,117 @@
+#ui-datepicker-div {
+  background: $color--white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+
+  .ui-datepicker-header.ui-widget-header {
+    padding: 10px;
+    position: relative;
+    border: 0;
+    border-bottom: 1px solid $color--submit-button;
+    background: none;
+
+    a {
+
+      &.ui-datepicker-prev,
+      &.ui-datepicker-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 0;
+        height: 20px;
+        width: 20px;
+        background: url('../assets/images/down-arrow (1).svg') no-repeat;
+        background-size: 14px;
+        background-position: center;
+      }
+
+      &.ui-datepicker-prev {
+        left: 10px;
+        transform: rotate(90deg) translateX(-50%);
+
+        .ui-icon-circle-triangle-w {
+          display: none;
+        }
+      }
+
+      &.ui-datepicker-next {
+        right: 10px;
+        transform: rotate(-90deg) translateX(50%);
+
+        .ui-icon-circle-triangle-e {
+          display: none;
+        }
+      }
+    }
+
+    .ui-datepicker-title {
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  table {
+    border: none;
+
+    &.ui-datepicker-calendar {
+      border: none;
+      margin: 0;
+    }
+
+    thead {
+      background: $color--white;
+    }
+
+    tr {
+
+      th,
+      td {
+        padding: 5px;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      td {
+        cursor: pointer;
+        transition: background 0.3s ease-in-out 0s;
+        border-radius: 4px;
+
+        &.ui-datepicker-current-day {
+          background: $color--submit-button;
+
+          a {
+            color: $color--white;
+          }
+        }
+
+        &:hover {
+          background: $color--submit-button;
+
+          a {
+            color: $color--white;
+
+          }
+        }
+
+        a {
+          transition: color 0.3s ease-in-out 0s;
+          background: none;
+          border: 0;
+        }
+      }
+
+      &:nth-of-type(even) {
+        background: $color--white;
+      }
+    }
+  }
+
+  &.ui-widget-content {
+    .ui-state-default {
+      border: 0;
+      background: none;
+    }
+
+  }
+}
